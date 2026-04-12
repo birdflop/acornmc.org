@@ -14,6 +14,9 @@ importers:
       '@eslint/js':
         specifier: latest
         version: 9.31.0
+      '@luminescent/icons-qwik':
+        specifier: ^0.1.1
+        version: 0.1.1
       '@luminescent/ui':
         specifier: ^6.8.2
         version: 6.8.2
@@ -438,6 +441,10 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.29':
     resolution: {integrity: sha512-uw6guiW/gcAGPDhLmd77/6lW8QLeiV5RUTsAX46Db6oLhGaVj4lhnPwb184s1bkc8kdVg/+h988dro8GRDpmYQ==}
+
+  '@luminescent/icons-qwik@0.1.1':
+    resolution: {integrity: sha512-W69uzPt9qAhqShl74bma9yzRqXv8FNJLz3R/R6vC4Z5rXYaZJ4W2fcITOUX33WBmKIlq6YNPrm6rWWY6tfMikw==}
+    engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
 
   '@luminescent/ui-qwik@7.0.0-2':
     resolution: {integrity: sha512-Hyp64qzRRaI0SExLDWGmdnc/2iJZDfear7u5WhAre/nxe5D5NPB3g7D2PoVIENyLeK2S6WMfuFo2VpS+5QlqcQ==}
@@ -2863,6 +2870,8 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.4
+
+  '@luminescent/icons-qwik@0.1.1': {}
 
   '@luminescent/ui-qwik@7.0.0-2(@luminescent/ui@6.8.2)':
     dependencies:

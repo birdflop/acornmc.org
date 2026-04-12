@@ -27,7 +27,7 @@ export default component$(() => {
 
         <link rel="canonical" href={url.href} />
       </head>
-      <body lang="en" class="bg-bg text-lum-text">
+      <body lang="en" class="text-lum-text">
         <RouterOutlet />
       </body>
     </>
