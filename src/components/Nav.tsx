@@ -2,23 +2,19 @@ import { component$ } from '@qwik.dev/core';
 import { Link, useLocation } from '@qwik.dev/router';
 import { Nav } from '@luminescent/ui-qwik';
 
-import { Book, Loader2 } from 'lucide-icons-qwik';
-import { SiGithub, SiDiscord } from 'simple-icons-qwik';
+import { Book, Crown, Form, HandCoins, Loader2, Scale, Vote } from 'lucide-icons-qwik';
+import { SiDiscord } from 'simple-icons-qwik';
 import { Acorn } from './Acorn';
 
 // Links used in multiple places, defined here to avoid duplication and potential inconsistencies
-export const donateLink = 'https://www.paypal.com/US/fundraiser/charity/5036975';
-export const discordLink = 'https://discord.gg/nmgtX5z';
+export const discordLink = 'https://discord.gg/CRBQKYA';
 
 export default component$(() => {
   const loc = useLocation();
 
   return (
-    <Nav fixed floating colorClass="lum-grad-bg-nav-bg border-b-lum-border/10 shadow-lg"
-      style={{
-        '--color-lum-gradient': '#7AFFEA55',
-      }}>
-      <Link q:slot="start" href="/" class="lum-btn lum-bg-transparent hover:lum-bg-nav-bg p-2">
+    <Nav fixed floating colorClass="lum-grad-bg-nav-bg border-b-lum-border/10 shadow-lg nav">
+      <Link q:slot="start" href="/" class="lum-btn rounded-lum-2 lum-bg-transparent hover:lum-bg-nav-bg p-2">
         <Acorn size={24} />
         <span class="font-semibold -ml-1">Acorn</span>
         <div class={{
@@ -28,8 +24,23 @@ export default component$(() => {
           <Loader2 size={16} class="animate-spin" />
         </div>
       </Link>
-      <Link q:slot="end" href="/docs" class="lum-btn lum-bg-transparent hover:lum-bg-nav-bg hidden sm:flex">
-        <Book size={20} /> Docs
+      <Link q:slot="end" href="/vote" class="lum-btn rounded-lum-2 lum-bg-transparent hover:lum-bg-nav-bg hidden sm:flex">
+        <Vote size={20} /> Vote
+      </Link>
+      <Link q:slot="end" href="/ranks" class="lum-btn rounded-lum-2 lum-bg-transparent hover:lum-bg-nav-bg hidden sm:flex">
+        <Crown size={20} /> Ranks
+      </Link>
+      <Link q:slot="end" href="/forms" class="lum-btn rounded-lum-2 lum-bg-transparent hover:lum-bg-nav-bg hidden sm:flex">
+        <Form size={20} /> Forms
+      </Link>
+      <Link q:slot="end" href="https://acorn.tebex.io/" class="lum-btn rounded-lum-2 lum-bg-transparent hover:lum-bg-nav-bg hidden sm:flex">
+        <HandCoins size={20} /> Donate
+      </Link>
+      <Link q:slot="end" href="/help" class="lum-btn rounded-lum-2 lum-bg-transparent hover:lum-bg-nav-bg hidden sm:flex">
+        <Book size={20} /> Getting Started
+      </Link>
+      <Link q:slot="end" href="/rules" class="lum-btn rounded-lum-2 lum-bg-transparent hover:lum-bg-nav-bg hidden sm:flex">
+        <Scale size={20} /> Rules
       </Link>
       <div q:slot="end" class="hidden sm:flex gap-2">
         <SocialButtons />
@@ -48,10 +59,7 @@ export default component$(() => {
 
 export const SocialButtons = component$(() => {
   return <>
-    <a href="https://github.com/birdflop/web" title="GitHub" class="lum-btn p-2 lum-bg-transparent hover:lum-bg-nav-bg fill-current">
-      <SiGithub size={20} />
-    </a>
-    <a href={discordLink} title="Discord" class="lum-btn p-2 lum-bg-transparent hover:lum-bg-nav-bg fill-current" data-umami-event="discord-link" data-umami-source="nav">
+    <a href={discordLink} title="Discord" class="lum-btn rounded-lum-2 p-2 lum-bg-transparent hover:lum-bg-nav-bg fill-current" data-umami-event="discord-link" data-umami-source="nav">
       <SiDiscord size={20} />
     </a>
   </>;

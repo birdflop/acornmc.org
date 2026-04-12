@@ -1,11 +1,15 @@
-import { component$, useOnWindow, $, useStore, useVisibleTask$ } from '@qwik.dev/core';
+import { component$, useStore, useVisibleTask$ } from '@qwik.dev/core';
 import { DocumentHead } from '@qwik.dev/router';
 
 import { Loader2 } from 'lucide-icons-qwik';
 import { SiDiscord } from 'simple-icons-qwik';
 import { Acorn } from '~/components/Acorn';
-import Testimonials from '~/components/sections/Testimonials';
-import Why from '~/components/sections/Why';
+import { discordLink } from '~/components/Nav';
+import Testimonials from '~/components/home/Testimonials';
+import Why from '~/components/home/Why';
+
+// @ts-ignore
+import Background from '~/components/images/bg.png?jsx&format=avif&w=1280;1920;2560;3840';
 
 export default component$(() => {
   const store = useStore({
@@ -14,13 +18,6 @@ export default component$(() => {
     version: null as string | null,
     discordonline: null as number | null,
   });
-
-  useOnWindow('scroll', $(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (mediaQuery.matches) return;
-    const hero = document.getElementById('hero')!;
-    hero.style.transform = `translateY(${window.scrollY / 2}px)`;
-  }));
 
   // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(async () => {
@@ -39,17 +36,10 @@ export default component$(() => {
     store.discordonline = discorddata.presence_count;
   });
 
-  useOnWindow('scroll', $(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (mediaQuery.matches) return;
-    const bg = document.getElementById('bg')!;
-    bg.style.bottom = `${window.scrollY / 3}px`;
-    bg.style.setProperty('--tw-blur', `blur(${window.scrollY / 20}px)`);
-    const hero = document.getElementById('hero')!;
-    hero.style.transform = `translateY(${window.scrollY / 2}px)`;
-  }));
-
   return <>
+    <Background id="bg" alt="Background" class={{
+      'fixed scale-105 bottom-0 brightness-85 saturate-85 sepia-15 dark:opacity-50 blur-none overflow-hidden -z-10 w-lvw h-lvh object-cover': true,
+    }}/>
     <section class="min-h-svh flex justify-center relative overflow-hidden"
       style={{
         '--lum-border-radius': '1.5rem',
@@ -66,9 +56,9 @@ export default component$(() => {
                 background: 'linear-gradient(135deg, #3b74ff, #7AFFEA)',
                 backgroundClip: 'text',
               }}>
-                Minecraft
+              Minecraft
             </span>{' '}
-              as it should be.
+            as it should be.
           </h1>
         </div>
         <div class="flex flex-wrap items-center justify-center gap-2 mt-12">
@@ -92,7 +82,7 @@ export default component$(() => {
               </span>
             </span>
           </button>
-          <a href="https://discord.gg/CRBQKYA" target="_blank"
+          <a href={discordLink} target="_blank"
             class="fill-current lum-btn lum-btn-p-4 backdrop-blur-sm text-lg lum-grad-bg-indigo-500/20 hover:lum-bg-indigo-300 animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:anim-duration-800">
             <SiDiscord size={36} />
             <span class="flex flex-col gap-1 text-left">
@@ -108,7 +98,7 @@ export default component$(() => {
         </div>
       </div>
     </section>
-    <div class="bg-gray-900 mask-[linear-gradient(to_bottom,transparent_0px,black_8rem,black_100%)] pt-32">
+    <div class="bg-bg border-t border-lum-border/10">
       <Why />
       <Testimonials />
     </div>
