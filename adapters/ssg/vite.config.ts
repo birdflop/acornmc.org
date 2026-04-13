@@ -12,7 +12,7 @@ export default extendConfig(baseConfig, () => {
     },
     plugins: [
       ssgAdapter({
-        origin: "https://birdflop.github.io/acornmc.org",
+        origin: "https://acorn.birdflop.com",
         //origin: "https://acornmc.org",
       }),
     ],
