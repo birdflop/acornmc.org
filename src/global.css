@@ -5,6 +5,11 @@
 @plugin "@anuragroy/tailwindcss-animate";
 
 @import "@luminescent/ui";
+
+.markdown {
+  @import "@luminescent/ui/formatting";
+}
+
 @source "../node_modules/@luminescent/ui-qwik";
 
 @theme {
@@ -74,6 +79,7 @@
     --color-lum-text-secondary: var(--color-gray-600);
   }
 }
+
 a.lum-btn, a.lum-card {
   color: var(--color-text) !important;
   text-decoration: none;

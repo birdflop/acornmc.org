@@ -13,7 +13,7 @@ export default component$(() => {
   const loc = useLocation();
 
   return (
-    <Nav fixed floating colorClass="lum-grad-bg-nav-bg border-b-lum-border/10 shadow-lg nav">
+    <Nav fixed floating colorClass="lum-grad-bg-nav-bg border-b-lum-border/10 shadow-lg nav text-white">
       <Link q:slot="start" href="/" class="lum-btn rounded-lum-2 lum-bg-transparent hover:lum-bg-nav-bg p-2">
         <Acorn size={24} />
         <span class="font-semibold -ml-1">Acorn</span>
@@ -33,9 +33,9 @@ export default component$(() => {
       <Link q:slot="end" href="/forms" class="lum-btn rounded-lum-2 lum-bg-transparent hover:lum-bg-nav-bg hidden sm:flex">
         <Form size={20} /> Forms
       </Link>
-      <Link q:slot="end" href="https://acorn.tebex.io/" class="lum-btn rounded-lum-2 lum-bg-transparent hover:lum-bg-nav-bg hidden sm:flex">
+      <a q:slot="end" href="https://acorn.tebex.io/" class="lum-btn rounded-lum-2 lum-bg-transparent hover:lum-bg-nav-bg hidden sm:flex">
         <HandCoins size={20} /> Donate
-      </Link>
+      </a>
       <Link q:slot="end" href="/help" class="lum-btn rounded-lum-2 lum-bg-transparent hover:lum-bg-nav-bg hidden sm:flex">
         <Book size={20} /> Getting Started
       </Link>

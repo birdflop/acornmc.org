@@ -3,7 +3,6 @@ import { DocumentHead } from '@qwik.dev/router';
 
 // @ts-ignore
 import Background from '~/components/images/ranks.png?jsx&format=avif&w=1280;1920;2560;3840';
-import * as Ranks from '~/components/ranks';
 
 export default component$(() => {
   return <>
@@ -34,11 +33,12 @@ export default component$(() => {
     </section>
     <div class="bg-bg border-t border-lum-border/10">
       <section class="flex flex-col min-h-screen justify-center pt-20 max-w-6xl mx-auto">
-        <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-4 mb-5">
-          <div class="lum-card lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip">
-            <Ranks.zombie width={720} height={720} class="absolute w-full h-full inset-0 object-cover -z-1 blur-xl scale-150 saturate-200 opacity-20" />
+        <div class="grid gap-2 mb-5">
+          <div class="lum-card border-none lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip"
+            style={{
+              '--color-lum-gradient': '#00A800AA',
+            }}>
             <div class="flex items-center gap-4">
-              <Ranks.zombie class="w-12 h-auto" />
               <div>
                 <h3 class="flex items-center gap-2 font-bold text-2xl">
                   Zombie
@@ -46,20 +46,26 @@ export default component$(() => {
                 <p class="text-lum-text-secondary">
                   Starter Rank
                 </p>
+                <ul class="list-disc list-inside mt-2 text-lum-text-secondary">
+                  <li>Use /warps to see a list of server warps. Use /warp [warp name] to teleport to them</li>
+                  <li>Use /tpa to teleport to other players and /tpahere to teleport other players to you</li>
+                  <li>Create your own warp with /iwarp create [warp name] [number of days]. Each day costs $50</li>
+                  <li>Earn $2 per chat message</li>
+                  <li>Create your own chest shops. Click here for a tutorial</li>
+                  <li>Open common and rare crates. Earn crate keys with /vote</li>
+                  <li>1 home. Set your home with /sethome</li>
+                  <li>Set claimflags with /setclaimflag and remove them with /unclaimflag</li>
+                  <li>Prevent non-claim members from starting raids in a claim with /setclaimflag raidmemberonly</li>
+                  <li>1 auction house slot</li>
+                </ul>
               </div>
             </div>
-            <h4>Perks</h4>
-            <p class="text-lum-text-secondary">3 Homes</p>
-            <p class="text-lum-text-secondary">1 Creative Plot</p>
-            <p class="text-lum-text-secondary">1 Auction House Slot</p>
-            <h4>Claim Flags</h4>
-            <p class="text-lum-text-secondary">noenter</p>
-            <p class="text-lum-text-secondary">noenterplayer</p>
           </div>
-          <div class="lum-card lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip">
-            <Ranks.husk width={720} height={720} class="absolute w-full h-full inset-0 object-cover -z-1 blur-xl scale-150 saturate-200 opacity-20" />
+          <div class="lum-card border-none lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip"
+            style={{
+              '--color-lum-gradient': '#FCFC54AA',
+            }}>
             <div class="flex items-center gap-4">
-              <Ranks.husk class="w-12 h-auto" />
               <div>
                 <h3 class="flex items-center gap-2 font-bold text-2xl">
                   Husk
@@ -67,19 +73,19 @@ export default component$(() => {
                 <p class="text-lum-text-secondary">
                   10 votes
                 </p>
+                <ul class="list-disc list-inside mt-2 text-lum-text-secondary">
+                  <li>Set 2 homes with /sethome [name]</li>
+                  <li>Block specific players from entering your claim with /setclaimflag noenterplayer [name]</li>
+                  <li>Stop players from being able to drop items in your claim with /setclaimflag noitemdrop</li>
+                </ul>
               </div>
             </div>
-            <h4>Perks</h4>
-            <p class="text-lum-text-secondary">6 Homes</p>
-            <p class="text-lum-text-secondary">2 Creative Plots</p>
-            <p class="text-lum-text-secondary">/suicide</p>
-            <h4>Claim Flags</h4>
-            <p class="text-lum-text-secondary">trappeddestination</p>
           </div>
-          <div class="lum-card lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip">
-            <Ranks.drowned width={720} height={720} class="absolute w-full h-full inset-0 object-cover -z-1 blur-xl scale-150 saturate-200 opacity-20" />
+          <div class="lum-card border-none lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip"
+            style={{
+              '--color-lum-gradient': '#00A8A8AA',
+            }}>
             <div class="flex items-center gap-4">
-              <Ranks.drowned class="w-12 h-auto" />
               <div>
                 <h3 class="flex items-center gap-2 font-bold text-2xl">
                   Drowned
@@ -87,18 +93,20 @@ export default component$(() => {
                 <p class="text-lum-text-secondary">
                   25 votes
                 </p>
+                <ul class="list-disc list-inside mt-2 text-lum-text-secondary">
+                  <li>3 homes</li>
+                  <li>Prevent blocks with gravity (e.g. sand, gravel) from falling with /setclaimflag noblockgravity</li>
+                  <li>Prevent named mobs from being killed with /setclaimflag protectnamedmobs</li>
+                  <li>2 auction house slots</li>
+                </ul>
               </div>
             </div>
-            <h4>Perks</h4>
-            <p class="text-lum-text-secondary">9 Homes</p>
-            <p class="text-lum-text-secondary">3 Creative Plots</p>
-            <h4>Claim Flags</h4>
-            <p class="text-lum-text-secondary">nofluidflow</p>
           </div>
-          <div class="lum-card lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip">
-            <Ranks.skeleton width={720} height={720} class="absolute w-full h-full inset-0 object-cover -z-1 blur-xl scale-150 saturate-200 opacity-20" />
+          <div class="lum-card border-none lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip"
+            style={{
+              '--color-lum-gradient': '#A8A8A8AA',
+            }}>
             <div class="flex items-center gap-4">
-              <Ranks.skeleton class="w-12 h-auto" />
               <div>
                 <h3 class="flex items-center gap-2 font-bold text-2xl">
                   Skeleton
@@ -106,18 +114,22 @@ export default component$(() => {
                 <p class="text-lum-text-secondary">
                   50 votes
                 </p>
+                <ul class="list-disc list-inside mt-2 text-lum-text-secondary">
+                  <li>4 homes</li>
+                  <li>Prevent chorus fruit from being eaten in your claim with /setclaimflag nochorusfruit</li>
+                  <li>Prevent ender pearls from being used in your claim with /setclaimflag noenderpearl</li>
+                  <li>Stop plants from growing and blocks from spreading with /setclaimflag nogrowth</li>
+                  <li>Prevent leaves from decaying with /setclaimflag noleafdecay</li>
+                  <li>Stop vines from growing with /setclaimflag novinegrowth</li>
+                </ul>
               </div>
             </div>
-            <h4>Perks</h4>
-            <p class="text-lum-text-secondary">12 Homes</p>
-            <p class="text-lum-text-secondary">4 Creative Plots</p>
-            <p class="text-lum-text-secondary">/nick</p>
-            <p class="text-lum-text-secondary">/hat</p>
           </div>
-          <div class="lum-card lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip">
-            <Ranks.stray width={720} height={720} class="absolute w-full h-full inset-0 object-cover -z-1 blur-xl scale-150 saturate-200 opacity-20" />
+          <div class="lum-card border-none lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip"
+            style={{
+              '--color-lum-gradient': '#54FCFCAA',
+            }}>
             <div class="flex items-center gap-4">
-              <Ranks.stray class="w-12 h-auto" />
               <div>
                 <h3 class="flex items-center gap-2 font-bold text-2xl">
                   Stray
@@ -125,20 +137,22 @@ export default component$(() => {
                 <p class="text-lum-text-secondary">
                   100 votes
                 </p>
+                <ul class="list-disc list-inside mt-2 text-lum-text-secondary">
+                  <li>5 homes</li>
+                  <li>Set an entrance message that people will receive upon entering your claim with /setclaimflag entermessage {'<message>'}</li>
+                  <li>Set an exit message that people will receive upon entering your claim with /setclaimflag exitmessage {'<message>'}</li>
+                  <li>Prevent ice formation in your claim with /setclaimflag noiceform</li>
+                  <li>Set a specific location for people who die in your claim to respawn with /setclaimflag respawnlocation</li>
+                  <li>3 auction house slots</li>
+                </ul>
               </div>
             </div>
-            <h4>Perks</h4>
-            <p class="text-lum-text-secondary">15 Homes</p>
-            <p class="text-lum-text-secondary">5 Creative Plots</p>
-            <p class="text-lum-text-secondary">/craft</p>
-            <h4>Claim Flags</h4>
-            <p class="text-lum-text-secondary">noitemdrop</p>
-            <p class="text-lum-text-secondary">nomobspawntype PHANTOM</p>
           </div>
-          <div class="lum-card lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip">
-            <Ranks.spider width={720} height={720} class="absolute w-full h-full inset-0 object-cover -z-1 blur-xl scale-150 saturate-200 opacity-20" />
+          <div class="lum-card border-none lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip"
+            style={{
+              '--color-lum-gradient': '#A80000AA',
+            }}>
             <div class="flex items-center gap-4">
-              <Ranks.spider class="w-12 h-auto" />
               <div>
                 <h3 class="flex items-center gap-2 font-bold text-2xl">
                   Spider
@@ -146,20 +160,21 @@ export default component$(() => {
                 <p class="text-lum-text-secondary">
                   250 votes
                 </p>
+                <ul class="list-disc list-inside mt-2 text-lum-text-secondary">
+                  <li>6 homes</li>
+                  <li>Create warp signs</li>
+                  <li>Prevent people from using /fly in your claim with /setclaimflag noflight</li>
+                  <li>Prevent snow formation with /setclaimflag nosnowform</li>
+                  <li>Prevent vehicle placement in your claim with /setclaimflag novehicle</li>
+                </ul>
               </div>
             </div>
-            <h4>Perks</h4>
-            <p class="text-lum-text-secondary">18 Homes</p>
-            <p class="text-lum-text-secondary">6 Creative Plots</p>
-            <h4>Claim Flags</h4>
-            <p class="text-lum-text-secondary">exitmessage</p>
-            <p class="text-lum-text-secondary">entermessage</p>
-            <p class="text-lum-text-secondary">noelytra</p>
           </div>
-          <div class="lum-card lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip">
-            <Ranks.creeper width={720} height={720} class="absolute w-full h-full inset-0 object-cover -z-1 blur-xl scale-150 saturate-200 opacity-20" />
+          <div class="lum-card border-none lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip"
+            style={{
+              '--color-lum-gradient': '#54FC54AA',
+            }}>
             <div class="flex items-center gap-4">
-              <Ranks.creeper class="w-12 h-auto" />
               <div>
                 <h3 class="flex items-center gap-2 font-bold text-2xl">
                   Creeper
@@ -167,22 +182,20 @@ export default component$(() => {
                 <p class="text-lum-text-secondary">
                   500 votes
                 </p>
+                <ul class="list-disc list-inside mt-2 text-lum-text-secondary">
+                  <li>7 homes</li>
+                  <li>Prevent XP loss on death with /setclaimflag keeplevel</li>
+                  <li>Stop your hunger level from decreasing with /setclaimflag nohunger</li>
+                  <li>4 auction house slots</li>
+                </ul>
               </div>
             </div>
-            <h4>Perks</h4>
-            <p class="text-lum-text-secondary">21 Homes</p>
-            <p class="text-lum-text-secondary">7 Creative Plots</p>
-            <p class="text-lum-text-secondary">/ptime</p>
-            <p class="text-lum-text-secondary">/pweather</p>
-            <h4>Claim Flags</h4>
-            <p class="text-lum-text-secondary">novehicle</p>
-            <p class="text-lum-text-secondary">playertime</p>
-            <p class="text-lum-text-secondary">playerweather</p>
           </div>
-          <div class="lum-card lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip">
-            <Ranks.phantom width={720} height={720} class="absolute w-full h-full inset-0 object-cover -z-1 blur-xl scale-150 saturate-200 opacity-20" />
+          <div class="lum-card border-none lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip"
+            style={{
+              '--color-lum-gradient': '#5454FCAA',
+            }}>
             <div class="flex items-center gap-4">
-              <Ranks.phantom class="w-12 h-auto" />
               <div>
                 <h3 class="flex items-center gap-2 font-bold text-2xl">
                   Phantom
@@ -190,21 +203,22 @@ export default component$(() => {
                 <p class="text-lum-text-secondary">
                   1000 votes
                 </p>
+                <ul class="list-disc list-inside mt-2 text-lum-text-secondary">
+                  <li>8 homes</li>
+                  <li>Regenerate health in your claim with /setclaimflag healthregen</li>
+                  <li>Make explosions harmless in your claim with /setclaimflag noexplosiondamage</li>
+                  <li>Prevent fluids from flowing in your claim with /setclaimflag nofluidflow</li>
+                  <li>Set a specific time in your claims with /setclaimflag playertime</li>
+                  <li>Set specific weather conditions in your claim with /setclaimflag playerweather</li>
+                </ul>
               </div>
             </div>
-            <h4>Perks</h4>
-            <p class="text-lum-text-secondary">24 Homes</p>
-            <p class="text-lum-text-secondary">8 Creative Plots</p>
-            <p class="text-lum-text-secondary">/rest</p>
-            <h4>Claim Flags</h4>
-            <p class="text-lum-text-secondary">keepinventory</p>
-            <p class="text-lum-text-secondary">keeplevel</p>
-            <p class="text-lum-text-secondary">nohunger</p>
           </div>
-          <div class="lum-card lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip">
-            <Ranks.wither width={720} height={720} class="absolute w-full h-full inset-0 object-cover -z-1 blur-xl scale-150 saturate-200 opacity-20" />
+          <div class="lum-card border-none lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip"
+            style={{
+              '--color-lum-gradient': '#545454AA',
+            }}>
             <div class="flex items-center gap-4">
-              <Ranks.wither class="w-12 h-auto" />
               <div>
                 <h3 class="flex items-center gap-2 font-bold text-2xl">
                   Wither
@@ -212,22 +226,25 @@ export default component$(() => {
                 <p class="text-lum-text-secondary">
                   2000 votes
                 </p>
+                <ul class="list-disc list-inside mt-2 text-lum-text-secondary">
+                  <li>9 homes</li>
+                  <li>Grant infinite arrows in your claim with /setclaimflag infinitearrows</li>
+                  <li>Grant keepinventory to all players in your claim with /setclaimflag keepinventory</li>
+                  <li>Prevent any player who doesn't have /accesstrust or higher permission from entering the claim with /setclaimflag noenter</li>
+                  <li>Prevent fall damage in your claim with /setclaimflag nofalldamage</li>
+                  <li>Prevent fire damage in your claim with /setclaimflag nofiredamage</li>
+                  <li>Prevent mob damage in your claim with /setclaimflag nomobdamage</li>
+                  <li>Prevent hostile mobs spawns with /setclaimflag nomobspawns</li>
+                  <li>5 auction house slots</li>
+                </ul>
               </div>
             </div>
-            <h4>Perks</h4>
-            <p class="text-lum-text-secondary">27 Homes</p>
-            <p class="text-lum-text-secondary">9 Creative Plots</p>
-            <h4>Claim Flags</h4>
-            <p class="text-lum-text-secondary">changebiome</p>
-            <p class="text-lum-text-secondary">noenderpearl</p>
-            <p class="text-lum-text-secondary">noflight</p>
-            <p class="text-lum-text-secondary">ownerfly</p>
-            <p class="text-lum-text-secondary">ownermemberfly (/fly in claims)</p>
           </div>
-          <div class="lum-card lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip">
-            <Ranks.warden width={720} height={720} class="absolute w-full h-full inset-0 object-cover blur-xl scale-150 saturate-200 opacity-20" />
+          <div class="lum-card border-none lum-grad-bg-lum-card-bg/20 duration-200! relative overflow-clip"
+            style={{
+              '--color-lum-gradient': '#025767AA',
+            }}>
             <div class="flex items-center gap-4">
-              <Ranks.warden class="w-12 h-auto" />
               <div>
                 <h3 class="flex items-center gap-2 font-bold text-2xl">
                   Warden
@@ -235,14 +252,11 @@ export default component$(() => {
                 <p class="text-lum-text-secondary">
                   4000 votes
                 </p>
+                <ul class="list-disc list-inside mt-2 text-lum-text-secondary">
+                  <li>Give yourself the /fly permission within your claim with /setclaimflag ownerfly</li>
+                </ul>
               </div>
             </div>
-            <h4>Perks</h4>
-            <p class="text-lum-text-secondary">30 Homes</p>
-            <p class="text-lum-text-secondary">10 Creative Plots</p>
-            <p class="text-lum-text-secondary">/nick formatting</p>
-            <p class="text-lum-text-secondary">/enderchest</p>
-            <p class="text-lum-text-secondary">/condense</p>
           </div>
         </div>
       </section>
