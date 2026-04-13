@@ -13,10 +13,10 @@ export default component$(() => {
   const loc = useLocation();
 
   return (
-    <Nav fixed floating colorClass="lum-grad-bg-nav-bg border-b-lum-border/10 shadow-lg nav text-white">
+    <Nav fixed colorClass="lum-grad-bg-nav-bg border-b-lum-border/10 shadow-lg nav text-white">
       <Link q:slot="start" href="/" class="lum-btn rounded-lum-2 lum-bg-transparent hover:lum-bg-nav-bg p-2">
         <Acorn size={24} />
-        <span class="font-semibold -ml-1">Acorn</span>
+        <span class="font-semibold ">Acorn</span>
         <div class={{
           'transition-all': true,
           '-ml-6 opacity-0': !loc.isNavigating,
@@ -46,8 +46,23 @@ export default component$(() => {
         <SocialButtons />
       </div>
 
-      <Link q:slot="mobile" href="/docs" class="lum-btn lum-bg-transparent hover:lum-bg-nav-bg">
-        <Book size={20} /> Docs
+      <Link q:slot="mobile" href="/vote" class="lum-btn lum-bg-transparent hover:lum-bg-nav-bg">
+        <Vote size={20} /> Vote
+      </Link>
+      <Link q:slot="mobile" href="/ranks" class="lum-btn lum-bg-transparent hover:lum-bg-nav-bg">
+        <Crown size={20} /> Ranks
+      </Link>
+      <Link q:slot="mobile" href="/forms" class="lum-btn lum-bg-transparent hover:lum-bg-nav-bg">
+        <Form size={20} /> Forms
+      </Link>
+      <Link q:slot="mobile" href="/donate" class="lum-btn lum-bg-transparent hover:lum-bg-nav-bg">
+        <HandCoins size={20} /> Donate
+      </Link>
+      <Link q:slot="mobile" href="/help" class="lum-btn lum-bg-transparent hover:lum-bg-nav-bg">
+        <Book size={20} /> Getting Started
+      </Link>
+      <Link q:slot="mobile" href="/rules" class="lum-btn lum-bg-transparent hover:lum-bg-nav-bg">
+        <Scale size={20} /> Rules
       </Link>
       <div q:slot="mobile" class="flex justify-evenly">
         <SocialButtons />

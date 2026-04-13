@@ -1,4 +1,8 @@
-import { BadgeDollarSign, FlameKindling, RefreshCw, Shield, Smile, Users2 } from 'lucide-icons-qwik';
+import { BadgeDollarSign, FlameKindling, RefreshCw, Scale, Shield, Smile, Store, Users2 } from 'lucide-icons-qwik';
+import { discordLink } from '../Nav';
+import { Card } from './Why';
+import { SiDiscord } from 'simple-icons-qwik';
+import { Birdflop } from '@luminescent/icons-qwik';
 
 export default [
   {
@@ -15,20 +19,48 @@ export default [
     icon: Users2,
     title: 'Active Community',
     description: 'We have an active community who is always willing to help out.',
+    buttons: [
+      {
+        icon: SiDiscord,
+        text: 'Discord',
+        href: discordLink,
+      },
+    ],
   },
   {
     icon: Shield,
     title: 'Anti Grief',
-    description: 'We have an active community who is always willing to help out.',
+    description: 'With our grief and theft prevention tools, we ensure that all players can have fun on Acorn without the fear of losing their builds.',
+    buttons: [
+      {
+        icon: Scale,
+        text: 'Rules',
+        href: '/rules',
+      },
+    ],
   },
   {
     icon: BadgeDollarSign,
     title: 'Player-Driven Economy',
     description: 'On Acorn, we let players create their own shops and sell their items for their own price.',
+    buttons: [
+      {
+        icon: Store,
+        text: 'Shops',
+        href: '/shops',
+      },
+    ],
   },
   {
     icon: FlameKindling,
     title: 'Survival',
-    description: 'Acorn is a survival server with minimal plugins to allow for an enjoyable multiplayer experience.  We\'re sponsored by Birdflop to ensure experiences are lag-free',
+    description: 'Acorn is a survival server with minimal plugins to allow for an enjoyable multiplayer experience. We\'re sponsored by Birdflop to ensure experiences are lag-free',
+    buttons: [
+      {
+        icon: Birdflop,
+        text: 'Birdflop',
+        href: 'https://birdflop.com',
+      },
+    ],
   },
-];
+] as Card[];

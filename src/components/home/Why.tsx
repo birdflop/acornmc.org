@@ -1,12 +1,18 @@
-import { component$ } from '@qwik.dev/core';
+import { Component, component$ } from '@qwik.dev/core';
 import { Hoverable } from '@luminescent/ui-qwik';
 
 import whylist from './whylist';
+import { IconProps } from 'simple-icons-qwik';
 
 export type Card = {
-  icon: any;
+  icon: Component<IconProps>;
   title: string;
   description: string;
+  buttons?: {
+    icon: Component<IconProps>;
+    text: string;
+    href: string;
+  }[];
 }
 
 export default component$(() => {
@@ -22,7 +28,7 @@ export default component$(() => {
         </span>
       </h3>
       <div class="grid lg:grid-cols-3 gap-2 max-w-5xl">
-        {whylist.map((card: Card, i: number) => (
+        {whylist.map((card, i: number) => (
           <div key={i} class="lum-card lum-grad-bg-lum-card-bg/50 duration-200! relative"
             onMouseMove$={(e, el) => Hoverable.onMouseMove$(e, el)}
             onMouseLeave$={(e, el) => Hoverable.onMouseLeave$(e, el)}>
@@ -33,6 +39,16 @@ export default component$(() => {
             <p class="text-lum-text-secondary">
               {card.description}
             </p>
+            {card.buttons && (
+              <div class="mt-auto flex flex-wrap gap-2">
+                {card.buttons.map((button: any, j: number) => (
+                  <a key={j} href={button.href} class="lum-btn rounded-lum-2 fill-current">
+                    <button.icon size={24} />
+                    {button.text}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>

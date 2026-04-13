@@ -51,7 +51,7 @@ export default component$(() => {
                   <li>Use /tpa to teleport to other players and /tpahere to teleport other players to you</li>
                   <li>Create your own warp with /iwarp create [warp name] [number of days]. Each day costs $50</li>
                   <li>Earn $2 per chat message</li>
-                  <li>Create your own chest shops. Click here for a tutorial</li>
+                  <li>Create your own chest shops. Click <a href="/shops" class="text-blue-500 underline">here</a> for a tutorial</li>
                   <li>Open common and rare crates. Earn crate keys with /vote</li>
                   <li>1 home. Set your home with /sethome</li>
                   <li>Set claimflags with /setclaimflag and remove them with /unclaimflag</li>
