@@ -1,5 +1,5 @@
 import { component$, useStore, useVisibleTask$ } from '@qwik.dev/core';
-import { DocumentHead } from '@qwik.dev/router';
+import { generateHead } from '~/root';
 
 import { Loader2 } from 'lucide-icons-qwik';
 import { SiDiscord } from 'simple-icons-qwik';
@@ -105,12 +105,4 @@ export default component$(() => {
   </>;
 });
 
-export const head: DocumentHead = {
-  title: 'Acorn',
-  meta: [
-    {
-      name: 'description',
-      content: 'Qwik site description',
-    },
-  ],
-};
+export const head = generateHead({});

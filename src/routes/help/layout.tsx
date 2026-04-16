@@ -1,7 +1,8 @@
 import { Sidebar } from '@luminescent/ui-qwik';
 import { component$, Slot } from '@qwik.dev/core';
-import { DocumentHead, routeLoader$, useLocation } from '@qwik.dev/router';
+import { routeLoader$, useLocation } from '@qwik.dev/router';
 import { Book } from 'lucide-icons-qwik';
+import { generateHead } from '~/root';
 
 // @ts-ignore
 import Background from '~/components/images/docs.png?jsx&format=avif&w=1280;1920;2560;3840';
@@ -115,12 +116,4 @@ export default component$(() => {
   </div>;
 });
 
-export const head: DocumentHead = {
-  title: 'Welcome to Qwik',
-  meta: [
-    {
-      name: 'description',
-      content: 'Qwik site description',
-    },
-  ],
-};
+export const head = generateHead({});

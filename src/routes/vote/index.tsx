@@ -1,5 +1,4 @@
 import { component$ } from '@qwik.dev/core';
-import { DocumentHead } from '@qwik.dev/router';
 
 // @ts-ignore
 import Background from '~/components/images/vote.png?jsx&format=avif&w=1280;1920;2560;3840';
@@ -9,6 +8,8 @@ import MCSO from '~/components/images/vote/mcso.png?jsx';
 import MCMP from '~/components/images/vote/mcmp.png?jsx';
 import TMCS from '~/components/images/vote/tmcs.png?jsx';
 import { Gauge, Road } from 'lucide-icons-qwik';
+import { voteLinks } from './all';
+import { generateHead } from '~/root';
 
 export default component$(() => {
   return <>
@@ -69,10 +70,9 @@ export default component$(() => {
 
         <div class="flex flex-wrap gap-2 mt-6">
           <button onClick$={() => {
-            window.open('https://minecraft-server-list.com/server/413910/vote/');
-            window.open('https://minecraftservers.org/vote/460247');
-            window.open('https://minecraft-mp.com/server/174434/vote/');
-            window.open('https://topminecraftservers.org/vote/29272');
+            for (const link of voteLinks) {
+              window.open(link, '_blank');
+            }
           }} class="lum-btn xl:lum-btn-p-4 backdrop-blur-sm text-lg lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:anim-duration-800">
             <Road size={32} />
             Open vote sites
@@ -152,12 +152,4 @@ export default component$(() => {
   </>;
 });
 
-export const head: DocumentHead = {
-  title: 'Welcome to Qwik',
-  meta: [
-    {
-      name: 'description',
-      content: 'Qwik site description',
-    },
-  ],
-};
+export const head = generateHead({});

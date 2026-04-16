@@ -1,5 +1,5 @@
 import { component$ } from '@qwik.dev/core';
-import { DocumentHead } from '@qwik.dev/router';
+import { generateHead } from '~/root';
 
 // @ts-ignore
 import Background from '~/components/images/shops.png?jsx&format=avif&w=1280;1920;2560;3840';
@@ -133,12 +133,4 @@ export default component$(() => {
   </>;
 });
 
-export const head: DocumentHead = {
-  title: 'Welcome to Qwik',
-  meta: [
-    {
-      name: 'description',
-      content: 'Qwik site description',
-    },
-  ],
-};
+export const head = generateHead({});

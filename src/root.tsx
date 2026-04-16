@@ -1,6 +1,8 @@
 import { component$ } from '@qwik.dev/core';
 import {
+  DocumentHead,
   DocumentHeadTags,
+  DocumentHeadValue,
   RouterOutlet,
   useLocation,
   useQwikRouter,
@@ -33,3 +35,40 @@ export default component$(() => {
     </>
   );
 });
+
+const defaultDescription = 'AcornMC is a Minecraft server focused on providing a high-quality, vanilla-like experience with a strong emphasis on community and player choice. Join us for a unique Minecraft adventure!';
+
+export function generateHead({
+  title = 'Acorn - Minecraft as it should be.',
+  description = defaultDescription,
+  image = '/branding/icon.png',
+  head = {},
+}: {
+  title?: string;
+  description?: string;
+  image?: string;
+  head?: Partial<DocumentHeadValue>;
+}): DocumentHead {
+  return {
+    ...head,
+    title,
+    meta: [
+      {
+        name: 'description',
+        content: description,
+      },
+      {
+        name: 'og:description',
+        content: description,
+      },
+      {
+        name: 'og:image',
+        content: image,
+      },
+      ...(head.meta ?? []),
+    ],
+    scripts: [
+      ...(head.scripts ?? []),
+    ],
+  };
+}
