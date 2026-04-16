@@ -2,7 +2,7 @@ import { component$ } from '@qwik.dev/core';
 
 // @ts-ignore
 import Background from '~/components/images/rules.png?jsx&format=avif&w=1280;1920;2560;3840';
-import Markdown from './best-minecraft-hosts-2024.md';
+import Markdown from './content.md';
 import { generateHead } from '~/root';
 
 export default component$(() => {
