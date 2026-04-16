@@ -24,6 +24,10 @@ export default component$(() => {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta content="#5CBDF4" name="theme-color" />
+
+        <link rel="icon" type="image/png" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
 
         <DocumentHeadTags />
 
@@ -41,7 +45,7 @@ const defaultDescription = 'AcornMC is a Minecraft server focused on providing a
 export function generateHead({
   title = 'Acorn - Minecraft as it should be.',
   description = defaultDescription,
-  image = '/branding/icon.png',
+  image = '/favicon.png',
   head = {},
 }: {
   title?: string;
