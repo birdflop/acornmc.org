@@ -7,7 +7,8 @@ import MCSL from '~/components/images/vote/mcsl.png?jsx';
 import MCSO from '~/components/images/vote/mcso.png?jsx';
 import MCMP from '~/components/images/vote/mcmp.png?jsx';
 import TMCS from '~/components/images/vote/tmcs.png?jsx';
-import { Gauge, Road } from 'lucide-icons-qwik';
+import Gauge from 'lucide-icons-qwik/icons/Gauge';
+import Road from 'lucide-icons-qwik/icons/Road';
 import { voteLinks } from './all';
 import { generateHead } from '~/root';
 

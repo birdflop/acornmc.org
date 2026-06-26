@@ -1,5 +1,5 @@
 import { component$, useVisibleTask$ } from '@qwik.dev/core';
-import { Loader2 } from 'lucide-icons-qwik';
+import Loader2 from 'lucide-icons-qwik/icons/Loader2';
 import { generateHead } from '~/root';
 
 export const voteLinks = [

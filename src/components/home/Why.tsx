@@ -2,14 +2,13 @@ import { Component, component$ } from '@qwik.dev/core';
 import { Hoverable } from '@luminescent/ui-qwik';
 
 import whylist from './whylist';
-import { IconProps } from 'simple-icons-qwik';
 
 export type Card = {
-  icon: Component<IconProps>;
+  icon: Component<any>;
   title: string;
   description: string;
   buttons?: {
-    icon: Component<IconProps>;
+    icon: Component<any>;
     text: string;
     href: string;
   }[];

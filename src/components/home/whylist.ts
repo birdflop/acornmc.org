@@ -1,7 +1,14 @@
-import { BadgeDollarSign, FlameKindling, RefreshCw, Scale, Shield, Smile, Store, Users2 } from 'lucide-icons-qwik';
+import BadgeDollarSign from 'lucide-icons-qwik/icons/BadgeDollarSign';
+import FlameKindling from 'lucide-icons-qwik/icons/FlameKindling';
+import RefreshCw from 'lucide-icons-qwik/icons/RefreshCw';
+import Scale from 'lucide-icons-qwik/icons/Scale';
+import Shield from 'lucide-icons-qwik/icons/Shield';
+import Smile from 'lucide-icons-qwik/icons/Smile';
+import Store from 'lucide-icons-qwik/icons/Store';
+import Users2 from 'lucide-icons-qwik/icons/Users2';
+import SiDiscord from 'simple-icons-qwik/icons/SiDiscord';
 import { discordLink } from '../Nav';
 import { Card } from './Why';
-import { SiDiscord } from 'simple-icons-qwik';
 import { Birdflop } from '@luminescent/icons-qwik';
 
 export default [

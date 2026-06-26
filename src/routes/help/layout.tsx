@@ -1,8 +1,8 @@
 import { Sidebar } from '@luminescent/ui-qwik';
 import { component$, Slot } from '@qwik.dev/core';
 import { routeLoader$, useLocation } from '@qwik.dev/router';
-import { Book } from 'lucide-icons-qwik';
 import { generateHead } from '~/root';
+import Book from 'lucide-icons-qwik/icons/Book';
 
 // @ts-ignore
 import Background from '~/components/images/docs.png?jsx&format=avif&w=1280;1920;2560;3840';

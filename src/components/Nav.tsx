@@ -2,8 +2,14 @@ import { component$ } from '@qwik.dev/core';
 import { Link, useLocation } from '@qwik.dev/router';
 import { Nav } from '@luminescent/ui-qwik';
 
-import { Book, Crown, Form, HandCoins, Loader2, Scale, Vote } from 'lucide-icons-qwik';
-import { SiDiscord } from 'simple-icons-qwik';
+import Book from 'lucide-icons-qwik/icons/Book';
+import Crown from 'lucide-icons-qwik/icons/Crown';
+import Form from 'lucide-icons-qwik/icons/Form';
+import HandCoins from 'lucide-icons-qwik/icons/HandCoins';
+import Loader2 from 'lucide-icons-qwik/icons/Loader2';
+import Scale from 'lucide-icons-qwik/icons/Scale';
+import Vote from 'lucide-icons-qwik/icons/Vote';
+import SiDiscord from 'simple-icons-qwik/icons/SiDiscord';
 import { Acorn } from './Acorn';
 
 // Links used in multiple places, defined here to avoid duplication and potential inconsistencies

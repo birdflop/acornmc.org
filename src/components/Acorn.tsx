@@ -1,7 +1,6 @@
 import { component$ } from '@qwik.dev/core';
-import { IconProps } from 'lucide-icons-qwik';
 
-export const Acorn = component$<IconProps>(
+export const Acorn = component$<any>(
   ({ size, ...props }) => {
     return (
       <svg

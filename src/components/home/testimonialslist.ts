@@ -1,4 +1,4 @@
-import { User } from 'lucide-icons-qwik';
+import User from 'lucide-icons-qwik/icons/User';
 
 export default [
   {

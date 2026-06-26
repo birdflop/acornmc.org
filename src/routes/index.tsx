@@ -1,8 +1,8 @@
 import { component$, useStore, useVisibleTask$ } from '@qwik.dev/core';
 import { generateHead } from '~/root';
 
-import { Loader2 } from 'lucide-icons-qwik';
-import { SiDiscord } from 'simple-icons-qwik';
+import Loader2 from 'lucide-icons-qwik/icons/Loader2';
+import SiDiscord from 'simple-icons-qwik/icons/SiDiscord';
 import { Acorn } from '~/components/Acorn';
 import { discordLink } from '~/components/Nav';
 import Testimonials from '~/components/home/Testimonials';
