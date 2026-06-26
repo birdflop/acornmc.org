@@ -28,7 +28,7 @@
     "@eslint/js": "latest",
     "@luminescent/icons-qwik": "^0.1.1",
     "@luminescent/ui": "^7.0.1",
-    "@luminescent/ui-qwik": "7.0.0-2",
+    "@luminescent/ui-qwik": "7.0.0-3",
     "@qwik.dev/core": "2.0.0-beta.37",
     "@qwik.dev/router": "2.0.0-beta.37",
     "@tailwindcss/vite": "^4.3.1",
