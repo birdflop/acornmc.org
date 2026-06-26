@@ -49,7 +49,7 @@ export default component$(() => {
           <div class="absolute -inset-4 blur-lg backdrop-blur-md rounded-4xl" />
           <h1 class={{
             'text-6xl xl:text-7xl font-extrabold drop-shadow-lg text-center': true,
-            'animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:anim-duration-600': true,
+            'animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:duration-600': true,
           }}>
             <span class="text-transparent"
               style={{
@@ -68,7 +68,7 @@ export default component$(() => {
               response.textContent = 'FAILED TO COPY, CHECK CONSOLE';
               setTimeout(() => response.textContent = 'COPIED SUCCESSFULLY', 3000);
             });
-          }} class="lum-btn lum-btn-p-4 backdrop-blur-sm text-lg lum-grad-bg-blue-500/20 hover:lum-bg-blue-300 animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:anim-duration-800">
+          }} class="lum-btn lum-btn-p-4 backdrop-blur-sm text-lg lum-grad-bg-blue-500/20 hover:lum-bg-blue-300 animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:duration-800">
             <Acorn size={36} />
             <span class="flex flex-col gap-1 text-left">
               <span class="font-bold flex items-center gap-2">
@@ -83,7 +83,7 @@ export default component$(() => {
             </span>
           </button>
           <a href={discordLink} target="_blank"
-            class="fill-current lum-btn lum-btn-p-4 backdrop-blur-sm text-lg lum-grad-bg-indigo-500/20 hover:lum-bg-indigo-300 animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:anim-duration-800">
+            class="fill-current lum-btn lum-btn-p-4 backdrop-blur-sm text-lg lum-grad-bg-indigo-500/20 hover:lum-bg-indigo-300 animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:duration-800">
             <SiDiscord size={36} />
             <span class="flex flex-col gap-1 text-left">
               <span class="font-bold flex items-center gap-2">

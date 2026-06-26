@@ -26,7 +26,7 @@ export default component$(() => {
           <div class="absolute -inset-4 blur-lg backdrop-blur-md rounded-4xl" />
           <h1 class={{
             'text-6xl xl:text-7xl font-extrabold drop-shadow-lg text-center': true,
-            'animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:anim-duration-600': true,
+            'animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:duration-600': true,
           }}>
             <span class="text-transparent"
               style={{
@@ -40,22 +40,22 @@ export default component$(() => {
         </div>
         <div class="flex flex-wrap items-center justify-center gap-2 mt-12">
           <a href="https://minecraft-server-list.com/server/413910/vote/" target="_blank"
-            class="lum-btn xl:lum-btn-p-4 backdrop-blur-sm text-lg lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:anim-duration-800">
+            class="lum-btn xl:lum-btn-p-4 backdrop-blur-sm text-lg lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:duration-800">
             <MCSL height={24} width={24} class="h-6 w-auto" />
             MCSL
           </a>
           <a href="https://minecraftservers.org/vote/460247" target="_blank"
-            class="lum-btn xl:lum-btn-p-4 backdrop-blur-sm text-lg lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:anim-duration-800">
+            class="lum-btn xl:lum-btn-p-4 backdrop-blur-sm text-lg lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:duration-800">
             <MCSO height={24} width={24} class="h-6 w-auto" />
             MCSO
           </a>
           <a href="https://minecraft-mp.com/server/174434/vote/" target="_blank"
-            class="lum-btn xl:lum-btn-p-4 backdrop-blur-sm text-lg lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:anim-duration-800">
+            class="lum-btn xl:lum-btn-p-4 backdrop-blur-sm text-lg lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:duration-800">
             <MCMP height={24} width={24} class="h-6 w-auto" />
             MCMP
           </a>
           <a href="https://topminecraftservers.org/vote/29272" target="_blank"
-            class="lum-btn xl:lum-btn-p-4 backdrop-blur-sm text-lg lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:anim-duration-800">
+            class="lum-btn xl:lum-btn-p-4 backdrop-blur-sm text-lg lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:duration-800">
             <TMCS height={24} width={24} class="h-6 w-auto" />
             TMCS
           </a>
@@ -74,7 +74,7 @@ export default component$(() => {
             for (const link of voteLinks) {
               window.open(link, '_blank');
             }
-          }} class="lum-btn xl:lum-btn-p-4 backdrop-blur-sm text-lg lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:anim-duration-800">
+          }} class="lum-btn xl:lum-btn-p-4 backdrop-blur-sm text-lg lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:duration-800">
             <Road size={32} />
             Open vote sites
           </button>

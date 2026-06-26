@@ -2,8 +2,7 @@
 
 @import "tailwindcss";
 
-@plugin "@anuragroy/tailwindcss-animate";
-
+@import "tw-animate-css";
 @import "@luminescent/ui";
 
 .markdown {

@@ -18,7 +18,7 @@ export default component$(() => {
           <div class="absolute -inset-4 blur-lg backdrop-blur-md rounded-4xl" />
           <h1 class={{
             'text-6xl xl:text-7xl font-extrabold drop-shadow-lg text-center': true,
-            'animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:anim-duration-600': true,
+            'animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:duration-600': true,
           }}>
             <span class="text-transparent"
               style={{
