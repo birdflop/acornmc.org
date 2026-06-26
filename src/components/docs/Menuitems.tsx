@@ -60,15 +60,50 @@ export const MenuItems = component$(
             <div key={i} class="mb-2">
               {item.items ?
                 <div class="mb-1">
-                  <p
-                    class={{
-                      'w-full lum-bg-transparent': true,
-                      'text-sm lum-btn-p-1! rounded-lum-1': level > 0,
-                      'text-indigo-500': isActiveOrParent(item),
-                    }}
-                  >
-                    {item.text}
-                  </p>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      class={{
+                        'lum-btn w-full block lum-bg-transparent': true,
+                        'text-sm lum-btn-p-1! rounded-lum-1': level > 0,
+                        'text-indigo-500': isActiveOrParent(item),
+                      }}
+                      onMouseOver$={$((evt, target: HTMLAnchorElement & { __prefetchLink: number }) => {
+                        const canHover = window.matchMedia('(hover: hover)').matches;
+                        if (!canHover) return;
+
+                        if (!target?.href) return;
+
+                        const fiveMinutesInMs = 5 * 60 * 1000;
+                        const now = Date.now();
+                        const timeGap = now - (target.__prefetchLink || 0);
+                        if (timeGap < fiveMinutesInMs) return;
+
+                        const prefetchLink = document.createElement('link');
+                        prefetchLink.href = target.href;
+                        prefetchLink.rel = 'prefetch';
+                        document.head.appendChild(prefetchLink);
+
+                        target.__prefetchLink = now;
+                      })}
+                    >
+                      {renderUpdated(item.href, markdownItems)}
+                      <span class="flex-1 text-left">{item.text}</span>
+                      {item.href === pathname && (
+                        <span class="w-2 h-2 m-1 rounded-full bg-indigo-600" />
+                      )}
+                    </Link>
+                  ) : (
+                    <p
+                      class={{
+                        'w-full lum-bg-transparent': true,
+                        'text-sm lum-btn-p-1! rounded-lum-1': level > 0,
+                        'text-indigo-500': isActiveOrParent(item),
+                      }}
+                    >
+                      {item.text}
+                    </p>
+                  )}
                   <div class={{
                     'pl-1': level > 0,
                   }}>

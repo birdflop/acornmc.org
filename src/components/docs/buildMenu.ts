@@ -151,28 +151,19 @@ export function buildMenu(markdownItems: MarkdownItems): ContentMenu[] {
 
     if (parts.length === 2) {
       const categoryName = parts[1];
-      const item = markdownItems[path];
       const category = categories.get(categoryName);
 
       if (category) {
-        const hasSubdirs = dirWithSubdirs.has(`/help/${categoryName}/`);
-
-        const displayText = hasSubdirs
-          ? (item.title || capitalizeWords(categoryName))
-          : capitalizeWords(categoryName);
-
-        category.items!.unshift({
-          text: displayText,
-          href: cleanPath,
-        });
+        category.href = cleanPath;
       }
     }
   });
+
   function toContentMenu(item: MutableMenuItem): ContentMenu {
     return {
       text: item.text,
       href: item.href,
-      items: item.items ? item.items.map(toContentMenu) : undefined,
+      items: item.items && item.items.length > 0 ? item.items.map(toContentMenu) : undefined,
     };
   }
 
