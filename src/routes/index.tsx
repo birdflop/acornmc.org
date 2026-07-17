@@ -19,7 +19,7 @@ export default component$(() => {
     discordonline: null as number | null,
   });
 
-  // eslint-disable-next-line qwik/no-use-visible-task
+  // oxlint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(async () => {
     const srvjson = await fetch('https://api.mcsrvstat.us/2/play.acornmc.org');
     const srvdata = await srvjson.json();

@@ -40,7 +40,8 @@ export default component$(() => {
   );
 });
 
-const defaultDescription = 'AcornMC is a Minecraft server focused on providing a high-quality, vanilla-like experience with a strong emphasis on community and player choice. Join us for a unique Minecraft adventure!';
+const defaultDescription =
+  'AcornMC is a Minecraft server focused on providing a high-quality, vanilla-like experience with a strong emphasis on community and player choice. Join us for a unique Minecraft adventure!';
 
 export function generateHead({
   title = 'Acorn - Minecraft as it should be.',
@@ -71,8 +72,6 @@ export function generateHead({
       },
       ...(head.meta ?? []),
     ],
-    scripts: [
-      ...(head.scripts ?? []),
-    ],
+    scripts: [...(head.scripts ?? [])],
   };
 }

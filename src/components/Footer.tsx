@@ -3,11 +3,11 @@ import { SocialButtons } from './Nav';
 
 export default component$(() => {
   return (
-    <footer class="relative flex flex-col gap-1 items-center justify-center text-center w-full bg-lum-card-bg border-t border-t-lum-border/10 p-6">
-      <div class="flex gap-1 mb-2">
+    <footer class="bg-lum-card-bg border-t-lum-border/10 relative flex w-full flex-col items-center justify-center gap-1 border-t p-6 text-center">
+      <div class="mb-2 flex gap-1">
         <SocialButtons />
       </div>
-      <span class="text-sm max-w-6xl text-center">
+      <span class="max-w-6xl text-center text-sm">
         Copyright © 2025 Acorn. All rights reserved.
       </span>
     </footer>

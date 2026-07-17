@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 
-@import "tailwindcss";
+@import 'tailwindcss';
 
-@import "tw-animate-css";
-@import "@luminescent/ui";
+@import 'tw-animate-css';
+@import '@luminescent/ui';
 
 .markdown {
-  @import "@luminescent/ui/formatting";
+  @import '@luminescent/ui/formatting';
 }
 
 @source "../node_modules/@luminescent/ui-qwik";
@@ -16,7 +16,7 @@
   --lum-border-radius: 1rem;
 
   --color-lum-gradient: #112245;
-  
+
   --color-gray-50: var(--color-slate-50);
   --color-gray-100: var(--color-slate-100);
   --color-gray-200: var(--color-slate-200);
@@ -41,18 +41,18 @@
   --color-lime: var(--color-lime-900);
   --color-teal: var(--color-teal-900);
   --color-lum-border: #dfdfdfaa;
-  --color-nav-bg: --alpha(#004BFF / 33%);
+  --color-nav-bg: --alpha(#004bff / 33%);
   --color-bg: var(--color-gray-950);
   --lum-depth: 1;
 }
 
 .nav {
-  --color-lum-gradient: #7AFFEA55;
+  --color-lum-gradient: #7affea55;
 }
 
 @media (prefers-color-scheme: light) {
   .nav {
-    --color-lum-gradient: #004BFF;
+    --color-lum-gradient: #004bff;
   }
   :root {
     --color-bg: var(--color-gray-200);
@@ -79,7 +79,8 @@
   }
 }
 
-a.lum-btn, a.lum-card {
+a.lum-btn,
+a.lum-card {
   color: var(--color-text) !important;
   text-decoration: none;
 }

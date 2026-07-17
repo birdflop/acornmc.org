@@ -12,7 +12,6 @@ Our in-depth analysis is below. At a glance, we conclude:
 
     EnviroMC ($1/GB): Best Budget Hosting (Tie)
 
-
 # Birdflop Hosting: Best Value, Best Performance (Tie)
 
     Prices are ~$1.90/GB RAM
@@ -119,7 +118,7 @@ https://help.pebblehost.com/en/minecraft/how-to-install-forge-to-your-server
 
 For Premium servers we have preinstall’s available that will basically handle the above guides for you in just a couple of clicks, simply select the modpack you wish to have installed and run it. You can see our available preinstalls on the JAR & preinstalls demo page here: https://demo.pebblehost.com/server/303413
 
-If you run into errors or issues we’re typically happy to assist you debugging them, although please do note that we do not provide support in any capacity for installing custom mod-packs that you have made yourself not available on curseforge.” 
+If you run into errors or issues we’re typically happy to assist you debugging them, although please do note that we do not provide support in any capacity for installing custom mod-packs that you have made yourself not available on curseforge.”
 
 Response time: 4 minutes
 

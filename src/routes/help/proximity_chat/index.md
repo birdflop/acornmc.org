@@ -2,7 +2,7 @@
 title: Proximity Chat
 ---
 
-We have added the PlasmoVoice plugin to Acorn, which enables users who install the PlasmoVoice mod to talk with eachother in-game via proximity voicechat! 
+We have added the PlasmoVoice plugin to Acorn, which enables users who install the PlasmoVoice mod to talk with eachother in-game via proximity voicechat!
 
 To install the mod, install a modloader of your choice (Fabric or Forge - you can look up how to install either of them), then download the right version of the mod for your modloader from the following link: https://modrinth.com/plugin/plasmo-voice
 

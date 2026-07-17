@@ -10,7 +10,7 @@ export const voteLinks = [
 ];
 
 export default component$(() => {
-  // eslint-disable-next-line qwik/no-use-visible-task
+  // oxlint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(() => {
     for (const link of voteLinks) {
       window.open(link, '_blank');
@@ -18,13 +18,9 @@ export default component$(() => {
   });
 
   return (
-    <section class="flex flex-col gap-3 mx-auto max-w-7xl px-6 items-center justify-center min-h-svh pt-20">
-      <h1  class="font-extrabold text-5xl my-6">
-        AcornMC Vote
-      </h1>
-      <p>
-        Opening Links
-      </p>
+    <section class="mx-auto flex min-h-svh max-w-7xl flex-col items-center justify-center gap-3 px-6 pt-20">
+      <h1 class="my-6 text-5xl font-extrabold">AcornMC Vote</h1>
+      <p>Opening Links</p>
       <Loader2 class="animate-spin" />
     </section>
   );

@@ -20,7 +20,7 @@ Players make shops with chest shops. Some shops allow you to sell to them. You c
 
 ## Jobs
 
-After talking with another player and agreeing on a task and payment, complete the job and receive the payment. Players can pay others with the /pay command. 
+After talking with another player and agreeing on a task and payment, complete the job and receive the payment. Players can pay others with the /pay command.
 
 ## Talking
 
@@ -34,8 +34,8 @@ Decorative heads cost $100 each. You can use /hdb to find heads and clicking one
 
 ## PvP Arenas
 
-PvP arenas cost a one-time fee and can be of any reasonable size.  This fee depends on the complexity of the arena's shape. PvP can also be turned toggled using /pvp on and /pvp off. 
+PvP arenas cost a one-time fee and can be of any reasonable size. This fee depends on the complexity of the arena's shape. PvP can also be turned toggled using /pvp on and /pvp off.
 
 ## Warps
 
-Warps cost $50/day. Use /iwarp create [name] [days] to make a warp. You can renew a warp at any time. For more information, please visit our warps page. 
+Warps cost $50/day. Use /iwarp create [name] [days] to make a warp. You can renew a warp at any time. For more information, please visit our warps page.

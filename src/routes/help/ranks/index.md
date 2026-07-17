@@ -8,7 +8,7 @@ You obtain ranks on Acorn by voting. For a list of all ranks and their capabilit
 
 ## Crate Keys
 
-Crate keys can be redeemed at /warp crates for money, claim blocks, and rare items. Use /keys to check your keys. 
+Crate keys can be redeemed at /warp crates for money, claim blocks, and rare items. Use /keys to check your keys.
 
 ## Vote Points
 
