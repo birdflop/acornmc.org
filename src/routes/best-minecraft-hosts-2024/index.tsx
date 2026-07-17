@@ -1,43 +1,58 @@
 import { component$ } from '@qwik.dev/core';
 
-// @ts-ignore
+// @ts-expect-error vite-imagetools
 import Background from '~/components/images/rules.png?jsx&format=avif&w=1280;1920;2560;3840';
 import Markdown from './content.md';
 import { generateHead } from '~/root';
 
 export default component$(() => {
-  return <>
-    <Background id="bg" alt="Background" class={{
-      'fixed scale-105 top-0 brightness-85 saturate-85 sepia-15 dark:opacity-50 blur-none overflow-hidden -z-10 w-lvw h-[50lvh] object-cover': true,
-    }}/>
-    <section class="min-h-[50svh] flex justify-center relative overflow-hidden"
-      style={{
-        '--lum-border-radius': '1.5rem',
-      }}>
-      <div id="hero" class="flex flex-col text-gray-100 px-20 items-center justify-center pt-18 max-w-5xl xl:max-w-6xl 2xl:max-w-7xl w-full">
-        <div class="relative flex flex-col gap-4 xl:gap-8">
-          <div class="absolute -inset-4 blur-lg backdrop-blur-md rounded-4xl" />
-          <h1 class={{
-            'text-6xl xl:text-7xl font-extrabold drop-shadow-lg text-center': true,
-            'animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:duration-600': true,
-          }}>
-            <span class="text-transparent"
-              style={{
-                background: 'linear-gradient(135deg, #3b74ff, #7AFFEA)',
-                backgroundClip: 'text',
-              }}>
-              Best Minecraft Hosts of 2024
-            </span>
-          </h1>
+  return (
+    <>
+      <Background
+        id="bg"
+        alt="Background"
+        class={{
+          'fixed top-0 -z-10 h-[50lvh] w-lvw scale-105 overflow-hidden object-cover blur-none brightness-85 saturate-85 sepia-15 dark:opacity-50': true,
+        }}
+      />
+      <section
+        class="relative flex min-h-[50svh] justify-center overflow-hidden"
+        style={{
+          '--lum-border-radius': '1.5rem',
+        }}
+      >
+        <div
+          id="hero"
+          class="flex w-full max-w-5xl flex-col items-center justify-center px-20 pt-18 text-gray-100 xl:max-w-6xl 2xl:max-w-7xl"
+        >
+          <div class="relative flex flex-col gap-4 xl:gap-8">
+            <div class="absolute -inset-4 rounded-4xl blur-lg backdrop-blur-md" />
+            <h1
+              class={{
+                'text-center text-6xl font-extrabold drop-shadow-lg xl:text-7xl': true,
+                'animate-in fade-in motion-safe:slide-in-from-top-16 motion-safe:duration-600': true,
+              }}
+            >
+              <span
+                class="text-transparent"
+                style={{
+                  background: 'linear-gradient(135deg, #3b74ff, #7AFFEA)',
+                  backgroundClip: 'text',
+                }}
+              >
+                Best Minecraft Hosts of 2024
+              </span>
+            </h1>
+          </div>
         </div>
-      </div>
-    </section>
-    <div class="bg-bg border-t border-lum-border/10">
-      <section class="flex flex-col gap-6 max-w-5xl mx-auto p-10 pt-20 markdown">
-        <Markdown />
       </section>
-    </div>
-  </>;
+      <div class="bg-bg border-lum-border/10 border-t">
+        <section class="markdown mx-auto flex max-w-5xl flex-col gap-6 p-10 pt-20">
+          <Markdown />
+        </section>
+      </div>
+    </>
+  );
 });
 
 export const head = generateHead({});
