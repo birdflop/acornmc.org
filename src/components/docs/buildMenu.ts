@@ -1,5 +1,5 @@
 import { type ContentMenu } from '@qwik.dev/router';
-import { type MarkdownItems } from '~/routes/help/layout';
+import { type MarkdownItems } from '~/routes/help/manifest';
 
 const menuItemPriority: {
   [key: string]: number;

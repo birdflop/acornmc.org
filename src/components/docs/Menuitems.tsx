@@ -1,6 +1,6 @@
 import { component$, $ } from '@qwik.dev/core';
 import { ContentMenu, Link } from '@qwik.dev/router';
-import { MarkdownItems } from '~/routes/help/layout';
+import { type MarkdownItems } from '~/routes/help/manifest';
 
 const DAYS = 24 * 60 * 60 * 1000;
 

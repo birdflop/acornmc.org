@@ -8,16 +8,7 @@ import Book from 'lucide-icons-qwik/icons/Book';
 import Background from '~/components/images/docs.png?jsx&format=avif&w=1280;1920;2560;3840';
 import { MenuItems } from '~/components/docs/Menuitems';
 import { buildMenu } from '~/components/docs/buildMenu';
-import helpManifest from './manifest.json';
-
-type MDX = {
-  title: string;
-  contributors?: string[];
-  created_at?: string;
-  updated_at?: string;
-};
-
-export type MarkdownItems = Record<string, MDX>;
+import { helpManifest, type MarkdownItems } from './manifest';
 
 const markdownItems: MarkdownItems = helpManifest;
 
