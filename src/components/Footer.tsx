@@ -8,7 +8,7 @@ export default component$(() => {
         <SocialButtons />
       </div>
       <span class="max-w-6xl text-center text-sm">
-        Copyright © 2025 Acorn. All rights reserved.
+        Copyright © {new Date().getFullYear()} Acorn. All rights reserved.
       </span>
     </footer>
   );
