@@ -8,21 +8,19 @@ import Book from 'lucide-icons-qwik/icons/Book';
 import Background from '~/components/images/docs.png?jsx&format=avif&w=1280;1920;2560;3840';
 import { MenuItems } from '~/components/docs/Menuitems';
 import { buildMenu } from '~/components/docs/buildMenu';
-import { helpManifest, type MarkdownItems } from './manifest';
-
-const markdownItems: MarkdownItems = helpManifest;
+import { helpManifest } from './manifest';
 
 export default component$(() => {
   const { url } = useLocation();
   const currentPath = url.pathname.endsWith('/')
     ? url.pathname
     : `${url.pathname}/`;
-  const currentItem = Object.entries(markdownItems).find(([k]) => {
+  const currentItem = Object.entries(helpManifest).find(([k]) => {
     return currentPath === k;
   });
   const title = currentItem ? currentItem[1].title : 'Docs';
 
-  const menuItems = buildMenu(markdownItems);
+  const menuItems = buildMenu(helpManifest);
 
   return (
     <div class="flex min-h-dvh items-stretch lg:pl-0 xl:pr-0">
@@ -35,7 +33,7 @@ export default component$(() => {
           <MenuItems
             items={menuItems}
             pathname={url.pathname}
-            markdownItems={markdownItems}
+            markdownItems={helpManifest}
           />
         ) : (
           <div class="py-4 text-center">
