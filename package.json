@@ -14,7 +14,7 @@
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "vp fmt .",
     "fmt.check": "vp fmt --check .",
-    "lint": "vp lint \"src/**/*.ts*\"",
+    "lint": "vp lint",
     "preview": "qwik build preview && vp preview --open",
     "start": "vp dev --open --mode ssr",
     "qwik": "qwik",
