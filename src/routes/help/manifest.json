@@ -1,0 +1,32 @@
+{
+  "/help/": {
+    "title": "Getting Started"
+  },
+  "/help/ranks/": {
+    "title": "Ranks"
+  },
+  "/help/preventing_grief/": {
+    "title": "Preventing Grief"
+  },
+  "/help/faq/": {
+    "title": "FAQ"
+  },
+  "/help/proximity_chat/": {
+    "title": "Proximity Chat"
+  },
+  "/help/terms_and_conditions/": {
+    "title": "Terms and Conditions"
+  },
+  "/help/support/": {
+    "title": "Support"
+  },
+  "/help/community/": {
+    "title": "Community"
+  },
+  "/help/economy/": {
+    "title": "Economy"
+  },
+  "/help/suggestions/": {
+    "title": "Suggestions"
+  }
+}

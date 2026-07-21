@@ -1,0 +1,92 @@
+import fs from 'fs';
+import path from 'path';
+
+type MDX = {
+  title: string;
+  contributors?: string[];
+  created_at?: string;
+  updated_at?: string;
+};
+
+function parseFrontmatter(rawContent: string): MDX | undefined {
+  const match = rawContent.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!match) return undefined;
+  const yamlBlock = match[1];
+  const frontmatter: MDX = { title: '' };
+
+  for (const line of yamlBlock.split(/\r?\n/)) {
+    const colonIndex = line.indexOf(':');
+    if (colonIndex === -1) continue;
+    const key = line.slice(0, colonIndex).trim();
+    let value = line.slice(colonIndex + 1).trim();
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1);
+    }
+    if (key === 'title') frontmatter.title = value;
+    if (key === 'created_at') frontmatter.created_at = value;
+    if (key === 'updated_at') frontmatter.updated_at = value;
+    if (key === 'contributors') {
+      try {
+        frontmatter.contributors = JSON.parse(value) as string[];
+      } catch {
+        if (value.startsWith('[') && value.endsWith(']')) {
+          value = value.slice(1, -1);
+        }
+        frontmatter.contributors = value
+          .split(',')
+          .map((s) => s.trim().replace(/^['"]|['"]$/g, ''))
+          .filter(Boolean);
+      }
+    }
+  }
+  return frontmatter.title ? frontmatter : undefined;
+}
+
+function scanHelpDirectory(
+  dir: string,
+  baseRoutesDir: string,
+  markdownItems: Record<string, MDX>
+) {
+  if (!fs.existsSync(dir)) return;
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      scanHelpDirectory(fullPath, baseRoutesDir, markdownItems);
+    } else if (
+      entry.isFile() &&
+      (entry.name.endsWith('.md') || entry.name.endsWith('.mdx'))
+    ) {
+      const relPath = path
+        .relative(baseRoutesDir, fullPath)
+        .replace(/\\/g, '/');
+      const rawRoute =
+        '/' + relPath.replace(/index\.mdx?$/, '').replace(/\.(md|mdx)$/, '');
+      const routePath = rawRoute.endsWith('/') ? rawRoute : rawRoute + '/';
+
+      if (routePath.includes('extras')) continue;
+
+      const content = fs.readFileSync(fullPath, 'utf-8');
+      const frontmatter = parseFrontmatter(content);
+      if (frontmatter) {
+        markdownItems[routePath] = frontmatter;
+      }
+    }
+  }
+}
+
+const routesDir = path.join(process.cwd(), 'src', 'routes');
+const helpDir = path.join(routesDir, 'help');
+const markdownItems: Record<string, MDX> = {};
+
+scanHelpDirectory(helpDir, routesDir, markdownItems);
+
+const manifestPath = path.join(helpDir, 'manifest.json');
+fs.writeFileSync(manifestPath, JSON.stringify(markdownItems, null, 2) + '\n');
+console.log(
+  `Generated manifest at ${manifestPath} with ${Object.keys(markdownItems).length} keys.`
+);

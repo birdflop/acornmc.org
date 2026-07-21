@@ -1,5 +1,5 @@
 ---
-title: Ranks
+title: Preventing Grief
 ---
 
 You can use a golden shovel to make claims. You'll obtain a free golden shovel by voting for the fourth time. Other players don't have permission to build, open containers, or even push buttons and open doors in your claims. In order to give your friends permission to build, use /trust while standing in your claim. In order to give your friends permission to open containers such as chests and furnaces, use /containertrust. In order to give your friends permission to use buttons, levers, and doors, use /accesstrust. If you would like to give everyone permission in your claim, you can use public as the playername. You can obtain claim blocks using /buyclaimblocks or by using crate keys at /warp crates.

@@ -15,6 +15,7 @@
     "fmt": "vp fmt .",
     "fmt.check": "vp fmt --check .",
     "lint": "vp lint",
+    "manifest": "bun src/scripts/generate-manifest.ts",
     "preview": "qwik build preview && vp preview --open",
     "start": "vp dev --open --mode ssr",
     "qwik": "qwik",

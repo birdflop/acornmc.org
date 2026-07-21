@@ -1,6 +1,6 @@
 import { Sidebar } from '@luminescent/ui-qwik';
 import { component$, Slot } from '@qwik.dev/core';
-import { routeLoader$, useLocation } from '@qwik.dev/router';
+import { useLocation } from '@qwik.dev/router';
 import { generateHead } from '~/root';
 import Book from 'lucide-icons-qwik/icons/Book';
 
@@ -8,6 +8,7 @@ import Book from 'lucide-icons-qwik/icons/Book';
 import Background from '~/components/images/docs.png?jsx&format=avif&w=1280;1920;2560;3840';
 import { MenuItems } from '~/components/docs/Menuitems';
 import { buildMenu } from '~/components/docs/buildMenu';
+import helpManifest from './manifest.json';
 
 type MDX = {
   title: string;
@@ -18,49 +19,19 @@ type MDX = {
 
 export type MarkdownItems = Record<string, MDX>;
 
-export const getMarkdownItems = async () => {
-  const rawData = await Promise.all(
-    Object.entries(
-      import.meta.glob<{ frontmatter?: MDX }>('/src/routes/help/**/*.{md,mdx}')
-    ).map(async ([k, v]) => {
-      return [
-        k
-          .replace('/src/routes', '')
-          .replace('index.mdx', '')
-          .replace('index.md', ''),
-        await v(),
-      ] as const;
-    })
-  );
-
-  const markdownItems: MarkdownItems = {};
-  rawData.forEach(([k, v]) => {
-    // skip marksdown cheatsheet and extras
-    if (k.includes('extras')) return;
-    if (v.frontmatter) {
-      markdownItems[k] = {
-        title: v.frontmatter.title,
-        contributors: v.frontmatter.contributors,
-        created_at: v.frontmatter.created_at,
-        updated_at: v.frontmatter.updated_at,
-      };
-    }
-  });
-  return markdownItems;
-};
-
-export const useMarkdownItems = routeLoader$(() => getMarkdownItems());
+const markdownItems: MarkdownItems = helpManifest;
 
 export default component$(() => {
-  const markdownItems = useMarkdownItems();
   const { url } = useLocation();
-  const currentPath = url.pathname;
-  const currentItem = Object.entries(markdownItems.value).find(([k]) => {
-    return currentPath == k;
+  const currentPath = url.pathname.endsWith('/')
+    ? url.pathname
+    : `${url.pathname}/`;
+  const currentItem = Object.entries(markdownItems).find(([k]) => {
+    return currentPath === k;
   });
   const title = currentItem ? currentItem[1].title : 'Docs';
 
-  const menuItems = buildMenu(markdownItems.value);
+  const menuItems = buildMenu(markdownItems);
 
   return (
     <div class="flex min-h-dvh items-stretch lg:pl-0 xl:pr-0">
@@ -73,7 +44,7 @@ export default component$(() => {
           <MenuItems
             items={menuItems}
             pathname={url.pathname}
-            markdownItems={markdownItems.value}
+            markdownItems={markdownItems}
           />
         ) : (
           <div class="py-4 text-center">
