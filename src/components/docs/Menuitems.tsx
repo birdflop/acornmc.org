@@ -64,7 +64,7 @@ export const MenuItems = component$(
               {item.items ? (
                 <div class="mb-1">
                   {item.href ? (
-                    <Link
+                    <a
                       href={item.href}
                       class={{
                         'lum-btn lum-bg-transparent block w-full': true,
@@ -101,7 +101,7 @@ export const MenuItems = component$(
                       {item.href === pathname && (
                         <span class="m-1 h-2 w-2 rounded-full bg-indigo-600" />
                       )}
-                    </Link>
+                    </a>
                   ) : (
                     <p
                       class={{
