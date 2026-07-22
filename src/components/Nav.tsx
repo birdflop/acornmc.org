@@ -106,13 +106,13 @@ export default component$(() => {
       >
         <Form size={20} /> Forms
       </Link>
-      <Link
+      <a
         q:slot="mobile"
         href="https://acorn.tebex.io/"
         class="lum-btn lum-bg-transparent hover:lum-bg-nav-bg"
       >
         <HandCoins size={20} /> Donate
-      </Link>
+      </a>
       <Link
         q:slot="mobile"
         href="/help"
