@@ -108,7 +108,7 @@ export default component$(() => {
       </Link>
       <Link
         q:slot="mobile"
-        href="/donate"
+        href="https://acorn.tebex.io/"
         class="lum-btn lum-bg-transparent hover:lum-bg-nav-bg"
       >
         <HandCoins size={20} /> Donate
