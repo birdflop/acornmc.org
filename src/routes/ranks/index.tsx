@@ -3,6 +3,7 @@ import { generateHead } from '~/root';
 
 // @ts-expect-error vite-imagetools
 import Background from '~/components/images/ranks.png?jsx&format=avif&w=1280;1920;2560;3840';
+import { Link } from '@qwik.dev/router';
 
 export default component$(() => {
   return (
@@ -76,9 +77,9 @@ export default component$(() => {
                     <li>Earn $2 per chat message</li>
                     <li>
                       Create your own chest shops. Click{' '}
-                      <a href="/shops" class="text-blue-500 underline">
+                      <Link href="/shops" class="text-blue-500 underline">
                         here
-                      </a>{' '}
+                      </Link>{' '}
                       for a tutorial
                     </li>
                     <li>

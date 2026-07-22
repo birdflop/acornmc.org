@@ -67,13 +67,13 @@ export default component$(() => {
       >
         <HandCoins size={20} /> Donate
       </a>
-      <a
+      <Link
         q:slot="end"
         href="/help"
         class="lum-btn rounded-lum-2 lum-bg-transparent hover:lum-bg-nav-bg hidden sm:flex"
       >
         <Book size={20} /> Getting Started
-      </a>
+      </Link>
       <Link
         q:slot="end"
         href="/rules"
