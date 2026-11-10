@@ -86,6 +86,12 @@ export default component$(() => {
             </h4>
             <div class="-ml-3 flex flex-col items-start gap-1">
               <a
+                href="/downloads"
+                class="lum-btn lum-bg-transparent hover:lum-bg-lum-card-bg rounded-lum-1"
+              >
+                World Downloads
+              </a>
+              <a
                 href="https://modrinth.com/plugin/plasmo-voice"
                 class="lum-btn lum-bg-transparent hover:lum-bg-lum-card-bg rounded-lum-1"
               >
@@ -97,12 +103,6 @@ export default component$(() => {
               >
                 Voice Chat Setup
               </Link>
-              <a
-                href="https://github.com/pemigrade/acorn"
-                class="lum-btn lum-bg-transparent hover:lum-bg-lum-card-bg rounded-lum-1"
-              >
-                Server Files
-              </a>
             </div>
           </div>
         </div>
