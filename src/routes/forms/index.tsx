@@ -61,21 +61,19 @@ export default component$(() => {
               </span>
             </h3>
             <p class="text-lum-text-secondary">
-              When you vote for Acorn, you are helping the community grow by
-              pushing Acorn higher on the top server lists. When this happens,
-              more players join Acorn. Some of those players could become a
-              great part of our community. Some of those players may even donate
-              to the server, helping pay the costs to run Acorn.
-            </p>
-            <p class="text-lum-text-secondary">
-              As a thank you for voting, we give players a crate key. You can
-              use the crate key at warp crates to get money, claim blocks, and
-              even rare items. We also give players a vote point which can be
-              used in the vote shop to buy cool perks. Voting is also an
-              important factor in ranking up. Our ranks are based on the number
-              of votes you have. More votes leads to a higher rank which has
-              more perks of its own. We also give a bonus crate key for voting 4
-              times in one day. Vote using the buttons at the top of the page.
+              Submit{' '}
+              <a
+                href="https://goo.gl/forms/bFHaoHEduOCYTTkH3"
+                class="text-blue-400 hover:text-blue-300"
+              >
+                this form
+              </a>{' '}
+              to appeal your ban. It could take 1-2 days for us to review your
+              appeal. While your appeal is being reviewed, do not remind staff
+              to check your appeal. To check the status of your ban appeal, or
+              to read other players' appeals, view this spreadsheet. If your
+              appeal is initially denied, you can re-appeal, but please wait 7
+              days before posting a new appeal.{' '}
             </p>
             <h3 class="text-3xl font-extrabold">
               Why do we give appealable bans instead of tempbans?
@@ -103,8 +101,15 @@ export default component$(() => {
               </span>
             </h3>
             <p class="text-lum-text-secondary">
-              Submit this form to apply for the trainee position. You must be at
-              least Stray rank to apply.
+              Submit{' '}
+              <a
+                href="https://forms.gle/a6p7hoyr2Ndv7Ym2A"
+                class="text-blue-400 hover:text-blue-300"
+              >
+                this form
+              </a>{' '}
+              to apply for the trainee position. You must be at least Stray rank
+              to apply.
             </p>
             <p class="text-lum-text-secondary">
               Do not remind staff to check your application. You will be

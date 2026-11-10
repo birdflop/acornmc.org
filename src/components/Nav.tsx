@@ -5,7 +5,7 @@ import { Nav } from '@luminescent/ui-qwik';
 import Book from 'lucide-icons-qwik/icons/Book';
 import Crown from 'lucide-icons-qwik/icons/Crown';
 import Form from 'lucide-icons-qwik/icons/Form';
-import HandCoins from 'lucide-icons-qwik/icons/HandCoins';
+import HandCoins from 'lucide-icons-qwik/icons/ShoppingCart';
 import Loader2 from 'lucide-icons-qwik/icons/Loader2';
 import Scale from 'lucide-icons-qwik/icons/Scale';
 import Vote from 'lucide-icons-qwik/icons/Vote';
@@ -21,6 +21,7 @@ export default component$(() => {
   return (
     <Nav
       fixed
+      nohamburger
       colorClass="lum-grad-bg-nav-bg border-b-lum-border/10 shadow-lg nav text-white"
     >
       <Link
@@ -81,55 +82,52 @@ export default component$(() => {
       >
         <Scale size={20} /> Rules
       </Link>
-      <div q:slot="end" class="hidden gap-2 sm:flex">
+      <div q:slot="end" class="flex gap-2">
         <SocialButtons />
       </div>
 
       <Link
         q:slot="mobile"
         href="/vote"
-        class="lum-btn lum-bg-transparent hover:lum-bg-nav-bg"
+        class="hover:lum-bg-nav-bg! flex-col gap-1! p-1! text-[0.65rem]!"
       >
         <Vote size={20} /> Vote
       </Link>
       <Link
         q:slot="mobile"
         href="/ranks"
-        class="lum-btn lum-bg-transparent hover:lum-bg-nav-bg"
+        class="hover:lum-bg-nav-bg! flex-col gap-1! p-1! text-[0.65rem]!"
       >
         <Crown size={20} /> Ranks
       </Link>
       <Link
         q:slot="mobile"
         href="/forms"
-        class="lum-btn lum-bg-transparent hover:lum-bg-nav-bg"
+        class="hover:lum-bg-nav-bg! flex-col gap-1! p-1! text-[0.65rem]!"
       >
         <Form size={20} /> Forms
       </Link>
       <a
         q:slot="mobile"
         href="https://acorn.tebex.io/"
-        class="lum-btn lum-bg-transparent hover:lum-bg-nav-bg"
+        class="hover:lum-bg-nav-bg! flex-col gap-1! p-1! text-[0.65rem]!"
       >
         <HandCoins size={20} /> Donate
       </a>
       <Link
         q:slot="mobile"
         href="/help"
-        class="lum-btn lum-bg-transparent hover:lum-bg-nav-bg"
+        class="hover:lum-bg-nav-bg! flex-col gap-1! p-1! text-[0.65rem]!"
       >
         <Book size={20} /> Getting Started
       </Link>
       <Link
         q:slot="mobile"
         href="/rules"
-        class="lum-btn lum-bg-transparent hover:lum-bg-nav-bg"
+        class="hover:lum-bg-nav-bg! flex-col gap-1! p-1! text-[0.65rem]!"
       >
         <Scale size={20} /> Rules
       </Link>
-      <div q:slot="mobile" class="flex justify-evenly">
-        <SocialButtons />
-      </div>
     </Nav>
   );
 });
