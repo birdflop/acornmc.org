@@ -2,11 +2,14 @@ import { component$ } from '@qwik.dev/core';
 
 // @ts-expect-error vite-imagetools
 import Background from '~/components/images/vote.png?jsx&format=avif&w=1280;1920;2560;3840';
-
-import MCSL from '~/components/images/vote/mcsl.png?jsx';
-import MCSO from '~/components/images/vote/mcso.png?jsx';
-import MCMP from '~/components/images/vote/mcmp.png?jsx';
-import TMCS from '~/components/images/vote/tmcs.png?jsx';
+// @ts-expect-error vite-imagetools
+import MCSL from '~/components/images/vote/mcsl.png?jsx&format=avif';
+// @ts-expect-error vite-imagetools
+import MCSO from '~/components/images/vote/mcso.png?jsx&format=avif';
+// @ts-expect-error vite-imagetools
+import MCMP from '~/components/images/vote/mcmp.png?jsx&format=avif';
+// @ts-expect-error vite-imagetools
+import TMCS from '~/components/images/vote/tmcs.png?jsx&format=avif';
 import Gauge from 'lucide-icons-qwik/icons/Gauge';
 import Road from 'lucide-icons-qwik/icons/Road';
 import { voteLinks } from './all';
