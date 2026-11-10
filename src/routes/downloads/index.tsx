@@ -46,27 +46,24 @@ export default component$(() => {
             </h1>
           </div>
           <div class="mt-12 flex flex-wrap items-center justify-center gap-2">
-            <a
-              href="https://mega.nz/folder/WXJnBaqK#jMJdEk-29nO3xRhMNrCfgQ"
-              target="_blank"
-              class="lum-btn xl:lum-btn-p-4 lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 text-lg backdrop-blur-sm motion-safe:duration-800"
+            <button
+              disabled
+              class="lum-btn xl:lum-btn-p-4 lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 text-lg opacity-50 backdrop-blur-sm motion-safe:duration-800"
             >
               1.12
-            </a>
-            <a
-              href="https://mega.nz/folder/UN0ETCaS#f6xyqhH6MBuNWCgH0yg6hg"
-              target="_blank"
-              class="lum-btn xl:lum-btn-p-4 lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 text-lg backdrop-blur-sm motion-safe:duration-800"
+            </button>
+            <button
+              disabled
+              class="lum-btn xl:lum-btn-p-4 lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 text-lg opacity-50 backdrop-blur-sm motion-safe:duration-800"
             >
               1.13
-            </a>
-            <a
-              href="https://mega.nz/folder/sPYmjaxS#EDyzAwiWv620oqsq4nsfHQ"
-              target="_blank"
-              class="lum-btn xl:lum-btn-p-4 lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 text-lg backdrop-blur-sm motion-safe:duration-800"
+            </button>
+            <button
+              disabled
+              class="lum-btn xl:lum-btn-p-4 lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 text-lg opacity-50 backdrop-blur-sm motion-safe:duration-800"
             >
               1.14
-            </a>
+            </button>
             <button
               disabled
               class="lum-btn xl:lum-btn-p-4 lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 text-lg opacity-50 backdrop-blur-sm motion-safe:duration-800"
