@@ -1,4 +1,5 @@
 ---
+icon: 'minecraft:item/feather'
 title: Suggestions
 ---
 

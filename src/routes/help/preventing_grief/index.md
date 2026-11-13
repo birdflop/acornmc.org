@@ -1,4 +1,5 @@
 ---
+icon: 'minecraft:item/golden_shovel'
 title: Preventing Grief
 ---
 

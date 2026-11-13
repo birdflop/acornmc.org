@@ -1,4 +1,5 @@
 ---
+icon: 'minecraft:item/writable_book'
 title: Rules
 description: AcornMC server rules and allowed client modifications.
 ---

@@ -1,4 +1,5 @@
 ---
+icon: 'minecraft:item/cookie'
 title: Community
 ---
 

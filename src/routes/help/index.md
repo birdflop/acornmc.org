@@ -1,4 +1,5 @@
 ---
+icon: 'minecraft:item/book'
 title: Getting Started
 ---
 

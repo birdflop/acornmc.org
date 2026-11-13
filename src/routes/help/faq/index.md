@@ -1,4 +1,5 @@
 ---
+icon: 'minecraft:item/knowledge_book'
 title: FAQ
 ---
 

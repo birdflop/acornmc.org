@@ -1,4 +1,5 @@
 ---
+icon: 'minecraft:item/goat_horn'
 title: Proximity Chat
 ---
 

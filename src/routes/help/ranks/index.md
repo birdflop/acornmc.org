@@ -1,4 +1,5 @@
 ---
+icon: 'minecraft:item/diamond'
 title: Ranks
 ---
 

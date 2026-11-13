@@ -1,4 +1,5 @@
 ---
+icon: 'minecraft:item/written_book'
 title: Terms and Conditions
 ---
 

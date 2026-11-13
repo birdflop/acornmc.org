@@ -1,4 +1,5 @@
 ---
+icon: 'minecraft:item/emerald'
 title: Economy
 ---
 
