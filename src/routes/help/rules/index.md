@@ -1,3 +1,8 @@
+---
+title: Rules
+description: AcornMC server rules and allowed client modifications.
+---
+
 # Advanced Rules
 
 ## 1. Clients
@@ -8,7 +13,7 @@ Modifications which give the player a gameplay advantage over other players are 
 
 This rule does not apply to:
 
-- [Optifine](https://optifine.net/) and [Sodium](https://modrinth.com/mod/sodium/versions) or any other performance mods
+- [Distant Horizons](https://modrinth.com/mod/distanthorizons) or [Voxy](https://modrinth.com/mod/voxy), [Sodium](https://modrinth.com/mod/sodium/versions), and other rendering or performance mods
 - [Xaero's Minimap](https://modrinth.com/mod/xaeros-minimap) and [VoxelMap](https://www.curseforge.com/minecraft/mc-mods/voxelmap)
 - [Litematica](https://modrinth.com/mod/litematica) and [Schematica](https://www.curseforge.com/minecraft/mc-mods/schematica), but only for viewing holograms. Any kind of automatic placement/airplace feature is not allowed.
 - [Fullbright](https://modrinth.com/mod/fullbright)

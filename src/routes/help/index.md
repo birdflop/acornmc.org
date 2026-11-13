@@ -6,7 +6,7 @@ title: Getting Started
 
 ## Rules
 
-[Click here](/rules) to view our rules. Violating our rules may result in a ban. Appeal a ban on our [forms page](/forms).
+[Click here](/help/rules/) to view our rules. Violating our rules may result in a ban. Appeal a ban on our [forms page](/forms).
 
 ## Ranks
 

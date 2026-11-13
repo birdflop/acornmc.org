@@ -1,47 +1,17 @@
-import { component$, $ } from '@qwik.dev/core';
+import { component$, QRL, useSignal, useContextProvider } from '@qwik.dev/core';
 import { ContentMenu, Link } from '@qwik.dev/router';
-import { type MarkdownItems } from '~/routes/help/manifest';
-
-const DAYS = 24 * 60 * 60 * 1000;
-
-const renderUpdated = (itemHref: string, markdownItems: MarkdownItems) => {
-  const updatedAt = markdownItems[itemHref]?.updated_at;
-
-  if (updatedAt) {
-    const updateDate = new Date(updatedAt);
-    const isUpdated = updateDate.getTime() + 14 * DAYS > new Date().getTime();
-
-    if (isUpdated) {
-      const formattedDate = updateDate.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-      });
-
-      return (
-        <div
-          class="group absolute top-1/2 -left-2.5 h-2 w-2 -translate-y-1/2 rounded-full bg-blue-500"
-          title={`Updated on ${formattedDate}`}
-        >
-          <span class="absolute top-0 left-4 z-50 hidden rounded bg-gray-800 px-2 py-1 text-xs whitespace-nowrap text-white group-hover:block">
-            Updated on {formattedDate}
-          </span>
-        </div>
-      );
-    }
-  }
-
-  return null;
-};
+import type { MarkdownItems } from './types';
+import Accordion, { openItemsContext } from './Accordion';
 
 export const MenuItems = component$(
   (props: {
     items?: ContentMenu[];
     pathname: string;
     markdownItems: MarkdownItems;
+    onClick$?: QRL<() => void>;
     level?: number;
   }) => {
-    const { items, pathname, markdownItems } = props;
+    const { items, pathname, markdownItems, onClick$ } = props;
     const level = props.level || 0;
 
     const isActiveOrParent = (item: ContentMenu): boolean => {
@@ -50,6 +20,11 @@ export const MenuItems = component$(
         return item.items.some((subItem) => isActiveOrParent(subItem));
       return false;
     };
+
+    const openItems = useSignal<string[]>(
+      (items || []).filter(isActiveOrParent).map((item) => item.text || '')
+    );
+    useContextProvider(openItemsContext, openItems);
 
     return (
       <div
@@ -63,66 +38,49 @@ export const MenuItems = component$(
             <div key={i} class="mb-2">
               {item.items ? (
                 <div class="mb-1">
-                  {item.href ? (
-                    <Link
-                      href={item.href}
-                      class={{
-                        'lum-btn lum-bg-transparent block w-full': true,
-                        'lum-btn-p-1! rounded-lum-1 text-sm': level > 0,
-                        'text-indigo-500': isActiveOrParent(item),
-                      }}
-                      onMouseOver$={$(
-                        (
-                          evt,
-                          target: HTMLAnchorElement & { __prefetchLink: number }
-                        ) => {
-                          const canHover =
-                            window.matchMedia('(hover: hover)').matches;
-                          if (!canHover) return;
-
-                          if (!target?.href) return;
-
-                          const fiveMinutesInMs = 5 * 60 * 1000;
-                          const now = Date.now();
-                          const timeGap = now - (target.__prefetchLink || 0);
-                          if (timeGap < fiveMinutesInMs) return;
-
-                          const prefetchLink = document.createElement('link');
-                          prefetchLink.href = target.href;
-                          prefetchLink.rel = 'prefetch';
-                          document.head.appendChild(prefetchLink);
-
-                          target.__prefetchLink = now;
-                        }
-                      )}
-                    >
-                      {renderUpdated(item.href, markdownItems)}
-                      <span class="flex-1 text-left">{item.text}</span>
-                      {item.href === pathname && (
-                        <span class="m-1 h-2 w-2 rounded-full bg-indigo-600" />
-                      )}
-                    </Link>
-                  ) : (
-                    <p
-                      class={{
-                        'lum-bg-transparent w-full': true,
-                        'lum-btn-p-1! rounded-lum-1 text-sm': level > 0,
-                        'text-indigo-500': isActiveOrParent(item),
-                      }}
-                    >
-                      {item.text}
-                    </p>
-                  )}
+                  <Accordion
+                    sectionName={item.text || `docs-item-${i}`}
+                    class={{
+                      'lum-bg-transparent w-full': true,
+                      'lum-btn-p-1! rounded-lum-1 text-sm': level > 0,
+                      'text-lum-accent': isActiveOrParent(item),
+                    }}
+                  >
+                    {item.text}
+                  </Accordion>
                   <div
                     class={{
+                      'overflow-hidden transition-all transition-discrete duration-300 starting:scale-90 starting:opacity-0': true,
+                      'hidden scale-90 opacity-0': !openItems.value.includes(
+                        item.text || `docs-item-${i}`
+                      ),
+                      'scale-100 opacity-100': openItems.value.includes(
+                        item.text || `docs-item-${i}`
+                      ),
                       'pl-1': level > 0,
                     }}
                   >
+                    {item.href && markdownItems[item.href] && (
+                      <Link
+                        href={item.href}
+                        onClick$={onClick$}
+                        class={{
+                          'lum-btn lum-bg-transparent text-sm': true,
+                          'text-lum-accent!': item.href === pathname,
+                        }}
+                        aria-current={
+                          item.href === pathname ? 'page' : undefined
+                        }
+                      >
+                        Overview
+                      </Link>
+                    )}
                     {item.items && item.items.length > 0 && (
                       <MenuItems
                         items={item.items}
                         pathname={pathname}
                         markdownItems={markdownItems}
+                        onClick$={onClick$}
                         level={level + 1}
                       />
                     )}
@@ -134,37 +92,36 @@ export const MenuItems = component$(
                   class={{
                     'lum-btn lum-bg-transparent': true,
                     'lum-btn-p-1 rounded-lum-1 text-sm': level > 0,
-                    'text-indigo-500!': item.href === pathname,
+                    'text-lum-accent!': item.href === pathname,
                   }}
-                  onMouseOver$={$(
-                    (
-                      evt,
-                      target: HTMLAnchorElement & { __prefetchLink: number }
-                    ) => {
-                      const canHover =
-                        window.matchMedia('(hover: hover)').matches;
-                      if (!canHover) return;
+                  onMouseOver$={(
+                    evt,
+                    target: HTMLAnchorElement & { __prefetchLink: number }
+                  ) => {
+                    const canHover =
+                      window.matchMedia('(hover: hover)').matches;
+                    if (!canHover) return;
 
-                      if (!target?.href) return;
+                    if (!target?.href) return;
 
-                      const fiveMinutesInMs = 5 * 60 * 1000;
-                      const now = Date.now();
-                      const timeGap = now - (target.__prefetchLink || 0);
-                      if (timeGap < fiveMinutesInMs) return;
+                    const fiveMinutesInMs = 5 * 60 * 1000;
+                    const now = Date.now();
+                    const timeGap = now - (target.__prefetchLink || 0);
+                    if (timeGap < fiveMinutesInMs) return;
 
-                      const prefetchLink = document.createElement('link');
-                      prefetchLink.href = target.href;
-                      prefetchLink.rel = 'prefetch';
-                      document.head.appendChild(prefetchLink);
+                    const prefetchLink = document.createElement('link');
+                    prefetchLink.href = target.href;
+                    prefetchLink.rel = 'prefetch';
+                    document.head.appendChild(prefetchLink);
 
-                      target.__prefetchLink = now;
-                    }
-                  )}
+                    target.__prefetchLink = now;
+                  }}
+                  onClick$={onClick$}
+                  aria-current={item.href === pathname ? 'page' : undefined}
                 >
-                  {item.href && renderUpdated(item.href, markdownItems)}
                   <span class="flex-1">{item.text}</span>
                   {item.href === pathname && (
-                    <span class="m-1 h-2 w-2 rounded-full bg-indigo-600" />
+                    <span class="bg-lum-accent m-1 h-2 w-2 rounded-full" />
                   )}
                 </Link>
               )}

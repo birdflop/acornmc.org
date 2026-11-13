@@ -37,7 +37,7 @@ export default component$(() => {
             <div class="-ml-3 flex flex-col items-start gap-1">
               {[
                 { href: '/help', label: 'Getting Started' },
-                { href: '/rules', label: 'Server Rules' },
+                { href: '/help/rules/', label: 'Server Rules' },
                 { href: '/help/faq', label: 'Frequently Asked Questions' },
                 { href: '/help/support', label: 'Get Support' },
               ].map(({ href, label }) => (

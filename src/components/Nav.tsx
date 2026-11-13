@@ -77,7 +77,7 @@ export default component$(() => {
       </Link>
       <Link
         q:slot="end"
-        href="/rules"
+        href="/help/rules/"
         class="lum-btn rounded-lum-2 lum-bg-transparent hover:lum-bg-nav-bg hidden sm:flex"
       >
         <Scale size={20} /> Rules
@@ -123,7 +123,7 @@ export default component$(() => {
       </Link>
       <Link
         q:slot="mobile"
-        href="/rules"
+        href="/help/rules/"
         class="hover:lum-bg-nav-bg! flex-col gap-1! p-1! text-[0.65rem]!"
       >
         <Scale size={20} /> Rules

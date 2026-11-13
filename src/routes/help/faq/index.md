@@ -4,7 +4,7 @@ title: FAQ
 
 ## Why is my render distance so low even though I increased it?
 
-The render distance is capped by the server. This has been done to improve performance. We suggest using Optifine to make it seem like you have a higher render distance by keeping chunks loaded client side. Optifine can be download from https://optifine.net/downloads.
+The render distance is capped by the server to improve performance. We recommend [Distant Horizons](https://modrinth.com/mod/distanthorizons) or [Voxy](https://modrinth.com/mod/voxy) to render simplified distant terrain beyond the normal render distance.
 
 ## Why does it tell me "Cannot send chat message" when I talk?
 

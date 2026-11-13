@@ -46,7 +46,7 @@ export default [
       {
         icon: Scale,
         text: 'Rules',
-        href: '/rules',
+        href: '/help/rules/',
       },
     ],
   },
