@@ -48,13 +48,13 @@ export default component$(() => {
           <div class="mt-12 flex flex-wrap items-center justify-center gap-2">
             <a
               href="https://drive.proton.me/urls/MF2JJVTCD4#ip4Ns2ZtO2C-"
-              class="lum-btn xl:lum-btn-p-4 lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 text-lg opacity-50 backdrop-blur-sm motion-safe:duration-800"
+              class="lum-btn xl:lum-btn-p-4 lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 text-lg backdrop-blur-sm motion-safe:duration-800"
             >
               1.12
             </a>
             <a
               href="https://drive.proton.me/urls/XJHA3CQQVR#2rI1haoVg55_"
-              class="lum-btn xl:lum-btn-p-4 lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 text-lg opacity-50 backdrop-blur-sm motion-safe:duration-800"
+              class="lum-btn xl:lum-btn-p-4 lum-grad-bg-lum-input-bg/20 animate-in fade-in motion-safe:slide-in-from-top-16 text-lg backdrop-blur-sm motion-safe:duration-800"
             >
               1.15
             </a>
