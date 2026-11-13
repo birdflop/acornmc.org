@@ -1,6 +1,8 @@
-The handbook feed uses Luminara's version 1 shape: `{ version: 1, menu, pages }`.
-Each page includes its `/help/` path, frontmatter metadata, and Markdown without
-frontmatter. The menu uses the same titles and hierarchy as the website.
+The handbook feed uses `{ version: 1, root, menu, pages }`. The absolute `root`
+URL (`https://acornmc.org/help/`) tells LumiGuide where the handbook lives. Page
+paths, menu links, buttons, and Markdown retain the website's `/help/` URLs and
+underscores. The plugin uses the feed root for validation, direct guide commands,
+internal links, and the website fallback instead of hard-coding `/docs/`.
 
 Run `vp run build` after editing documentation. The API route handlers and the
 help layout loader read Markdown directly through Vite's build-time imports.

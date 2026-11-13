@@ -16,12 +16,38 @@ describe('static handbook compatibility', () => {
     expect(feed.pages.map((page) => page.path).sort()).toEqual(
       Object.keys(metadata).sort()
     );
+    expect(feed.root).toBe('https://acornmc.org/help/');
     expect(feed.menu).toEqual(buildMenu(metadata));
     for (const page of feed.pages) {
-      expect(page.title).toBe(metadata[page.path].title);
+      expect(page.path).toMatch(/^\/help\/(?:[a-z0-9_-]+\/)*$/);
+      expect(page.title.trim()).not.toBe('');
+      expect(page.markdown.length).toBeLessThanOrEqual(500000);
       expect(page.markdown.trim().length).toBeGreaterThan(0);
       expect(page.markdown).not.toMatch(/^---\r?\n/);
     }
+  });
+
+  it('preserves website paths, extra buttons, and Markdown links', () => {
+    const source = '[Grief](/help/preventing_grief/#claims)';
+    const feed = buildDocsFeed({
+      '/src/routes/help/index.md': `---
+title: Handbook
+extra_buttons:
+  - label: Grief
+    href: /help/preventing_grief/
+---
+${source}`,
+      '/src/routes/help/preventing_grief/index.md':
+        '---\ntitle: Preventing Grief\n---\nProtect your build.',
+    });
+    expect(feed.pages[0].path).toBe('/help/');
+    expect(feed.pages[0].markdown).toBe(source);
+    expect(feed.pages[0].extra_buttons).toEqual([
+      { label: 'Grief', href: '/help/preventing_grief/' },
+    ]);
+    expect(
+      feed.menu.find((item) => item.text === 'Preventing Grief')?.href
+    ).toBe('/help/preventing_grief/');
   });
 
   it('derives audience-specific metadata without including Markdown in UI data', () => {

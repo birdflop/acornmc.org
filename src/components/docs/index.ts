@@ -19,7 +19,10 @@ const label = (part: string) =>
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 
-export function buildMenu(markdownItems: MarkdownItems): ContentMenu[] {
+export function buildMenu(
+  markdownItems: MarkdownItems,
+  basePath = '/help/'
+): ContentMenu[] {
   type MenuNode = { text: string; href?: string; items?: MenuNode[] };
   const root: MenuNode[] = [];
   for (const [path, metadata] of Object.entries(markdownItems).sort(
@@ -27,12 +30,12 @@ export function buildMenu(markdownItems: MarkdownItems): ContentMenu[] {
   )) {
     const parts = path.split('/').filter(Boolean).slice(1);
     if (!parts.length) {
-      root.push({ text: metadata.title, href: '/help/' });
+      root.push({ text: metadata.title, href: basePath });
       continue;
     }
     let items = root;
     for (let i = 0; i < parts.length; i++) {
-      const href = `/help/${parts.slice(0, i + 1).join('/')}/`;
+      const href = `${basePath}${parts.slice(0, i + 1).join('/')}/`;
       let item = items.find((entry) => entry.href === href);
       if (!item) {
         item = { text: markdownItems[href]?.title || label(parts[i]), href };

@@ -37,8 +37,8 @@ export function parseDocsSources(
 export function buildDocsFeed(sources: Record<string, string>) {
   const { metadata, markdown } = parseDocsSources(sources, 'minecraft');
   const pages = Object.entries(metadata).map(([path, entry]) => ({
-    path,
     ...entry,
+    path,
     date_created: entry.date_created || entry.created_at,
     last_updated: entry.last_updated || entry.updated_at,
     extra_buttons: entry.extra_buttons?.filter(
@@ -46,7 +46,12 @@ export function buildDocsFeed(sources: Record<string, string>) {
     ),
     markdown: markdown[path],
   }));
-  return { version: 1, menu: buildMenu(metadata), pages };
+  return {
+    version: 1,
+    root: 'https://acornmc.org/help/',
+    menu: buildMenu(metadata),
+    pages,
+  };
 }
 
 const getDocsSources = () =>
